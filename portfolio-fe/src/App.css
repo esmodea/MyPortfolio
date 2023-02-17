@@ -32,3 +32,44 @@
     background-color: #0690E6;
     box-shadow: 4px 4px 5px rgb(0 0 0 / 0.5);
 }
+
+.logo-container.selected:hover{
+    background-color: #034873;
+    box-shadow: inset 4px 4px 5px rgb(0 0 0 / 0.5);
+}
+
+.nav{
+    display: flex;
+    width: 100vw;
+    transition: 0s;
+    align-items: center;
+}
+
+.link-container{
+    flex: 1 1;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #046099;
+    height: fit-content;
+    padding: .5rem 3rem .5rem 3rem;
+    border-radius: 1.3rem 0rem 0rem 1.3rem;
+    transition: 0s;
+    box-shadow: 4px 4px 3px rgb(0 0 0 / 0.5);
+}
+
+.nav-link{
+    background-color: #046099;
+    font-size: xx-large;
+    text-decoration: none;
+    font-family: 'Kalam', 'Segoe UI', Tahoma, Verdana, sans-serif;
+    color: #A3D4FD;
+    border-radius: .7rem;
+    padding: .3rem 1.5rem 0rem 1.50rem;
+}
+
+.nav-link:hover{
+    background-color: #034873;
+    text-shadow: 4px 4px 5px rgb(0 0 0 / 0.5);
+    box-shadow: inset 4px 4px 5px rgb(0 0 0 / 0.5);
+}

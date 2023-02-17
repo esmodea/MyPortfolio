@@ -7,6 +7,7 @@ function App() {
   return (
     <Routes>
       <Route exact path='/' element={<LandingPage />}/>
+      <Route path='/portfolio' element={<LandingPage />}/>
     </Routes>
   );
 }
