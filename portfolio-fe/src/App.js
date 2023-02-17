@@ -1,12 +1,13 @@
 import React from 'react';
-import logo from './logo.svg';
+import LandingPage from './features/components/LandingPage';
 import './App.css';
+import { Route, Routes } from 'react-router-dom'
 
 function App() {
   return (
-    <div>
-
-    </div>
+    <Routes>
+      <Route exact path='/' element={<LandingPage />}/>
+    </Routes>
   );
 }
 
