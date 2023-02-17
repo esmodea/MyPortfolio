@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Open+Sans:wght@300;400;500;600;700;800&family=Source+Code+Pro:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,600&family=Open+Sans:wght@300;400;500;600;700;800&family=Play:wght@400;700&family=Source+Code+Pro:wght@300;400&display=swap');
 
 * {
     transition: 0.5s;
@@ -62,14 +62,78 @@
     background-color: #046099;
     font-size: xx-large;
     text-decoration: none;
-    font-family: 'Kalam', 'Segoe UI', Tahoma, Verdana, sans-serif;
+    font-family: 'Josefin Sans', Tahoma, Verdana, sans-serif;
     color: #A3D4FD;
     border-radius: .7rem;
     padding: .3rem 1.5rem 0rem 1.50rem;
+    flex: 0 0 auto;
 }
 
 .nav-link:hover{
     background-color: #034873;
     text-shadow: 4px 4px 5px rgb(0 0 0 / 0.5);
     box-shadow: inset 4px 4px 5px rgb(0 0 0 / 0.5);
+}
+
+.nav-link.selected:hover{
+    background-color: #034873;
+    text-shadow: 4px 4px 5px rgb(0 0 0 / 0.5);
+    box-shadow: inset 4px 4px 5px rgb(0 0 0 / 0.5);
+    color: #A3D4FD;
+}
+
+.nav-link.selected{
+    background-color: #0690E6;
+    box-shadow: 4px 4px 5px rgb(0 0 0 / 0.5);
+    color: #011526;
+}
+
+@media screen and (max-width: 1525px) {
+    .nav-link{
+        font-size: x-large;
+    }
+}
+
+@media screen and (max-width: 1325px) {
+    .nav-link{
+        rotate: 30deg;
+        margin-left: -5vw;
+        margin-right: -5vw;
+        margin-top: 8.5vh;
+        margin-bottom: 8vh;
+    }
+    .link-container{
+        height: max-content;
+        align-items: top;
+        border-radius: 5rem 0rem 0rem 5rem;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .nav{
+        flex-direction: column;
+        transition: .1s;
+    }
+    .nav-link{
+        rotate: 30deg;
+        margin-left: -2rem;
+        margin-right: -2rem;
+    }
+    .link-container{
+        border-radius: 0;
+        width: 100%;
+    }
+    .logo-container{
+        width: 90vw;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .nav-link{
+        rotate: 50deg;
+        font-size: medium;
+        padding: 0rem .5rem;
+    }
 }
