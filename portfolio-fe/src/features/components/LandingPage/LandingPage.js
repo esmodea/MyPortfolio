@@ -5,8 +5,10 @@ import Welcome from './Welcome';
 const LandingPage = () => {
     return (
         <>
-            <NavBar />
-            <Welcome />
+            <div className="page-container">
+                <NavBar />
+                <Welcome />
+            </div>
         </>
     )
 }

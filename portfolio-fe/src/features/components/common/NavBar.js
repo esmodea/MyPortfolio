@@ -15,7 +15,7 @@ const NavBar = () => {
     return (
         <>
             <div className='nav'>
-                <Link onClick={() => {handleSelection(0)}} to={'/'} className={`logo-container ${state.selectedPage === 0 ? ' selected' : ''}`}>
+                <Link onClick={() => {handleSelection(1)}} to={'/'} className={`logo-container`}>
                     <img
                       className='main-logo'
                       src={logo}
@@ -25,11 +25,11 @@ const NavBar = () => {
                     />
                 </Link>
                 <div className='link-container'>
-                    <Link className={`nav-link ${state.selectedPage === 1 ? ' selected' : ''}`} onClick={() => {handleSelection(1)}} to={'/portfolio'}> About </Link>
-                    <Link className={`nav-link ${state.selectedPage === 2 ? ' selected' : ''}`} onClick={() => {handleSelection(2)}} to={'/portfolio'}> What I can do </Link>
-                    <Link className={`nav-link ${state.selectedPage === 3 ? ' selected' : ''}`} onClick={() => {handleSelection(3)}} to={'/portfolio'}> My Resume </Link>
-                    <Link className={`nav-link ${state.selectedPage === 4 ? ' selected' : ''}`} onClick={() => {handleSelection(4)}} to={'/portfolio'}> My Github </Link>
-                    <Link className={`nav-link ${state.selectedPage === 5 ? ' selected' : ''}`} onClick={() => {handleSelection(5)}} to={'/portfolio'}> The tools I use </Link>
+                    <Link className={`nav-link ${state.selectedPage === 1 ? ' selected' : ''}`} onClick={() => {handleSelection(1)}} to={'/about'}> About </Link>
+                    <Link className={`nav-link ${state.selectedPage === 2 ? ' selected' : ''}`} onClick={() => {handleSelection(2)}} to={'/about'}> What I can do </Link>
+                    <Link className={`nav-link ${state.selectedPage === 3 ? ' selected' : ''}`} onClick={() => {handleSelection(3)}} to={'/about'}> My Resume </Link>
+                    <Link className={`nav-link ${state.selectedPage === 4 ? ' selected' : ''}`} onClick={() => {handleSelection(4)}} to={'/about'}> My Github </Link>
+                    <Link className={`nav-link ${state.selectedPage === 5 ? ' selected' : ''}`} onClick={() => {handleSelection(5)}} to={'/about'}> The tools I use </Link>
                 </div>
             </div>
         </>

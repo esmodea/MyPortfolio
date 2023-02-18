@@ -1,11 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,600&family=Open+Sans:wght@300;400;500;600;700;800&family=Play:wght@400;700&family=Source+Code+Pro:wght@300;400&display=swap');
 
-* {
+.main-logo, .logo-container, .nav-link {
     transition: 0.5s;
 }
 
+.page-container{
+    width: 100vw;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
 .main-logo{
-    filter: drop-shadow(4px 4px 3px rgb(0 0 0 / 0.5));
+    filter: drop-shadow(4px 4px 3px rgb(251 116 166 / 0.5));
 }
 
 .logo-container{
@@ -30,7 +39,7 @@
 
 .logo-container.selected{
     background-color: #0690E6;
-    box-shadow: 4px 4px 5px rgb(0 0 0 / 0.5);
+    box-shadow: 4px 4px 5px rgb(251 116 166 / 0.5);
 }
 
 .logo-container.selected:hover{
@@ -41,7 +50,6 @@
 .nav{
     display: flex;
     width: 100vw;
-    transition: 0s;
     align-items: center;
 }
 
@@ -54,8 +62,7 @@
     height: fit-content;
     padding: .5rem 3rem .5rem 3rem;
     border-radius: 1.3rem 0rem 0rem 1.3rem;
-    transition: 0s;
-    box-shadow: 4px 4px 3px rgb(0 0 0 / 0.5);
+    box-shadow: 4px 4px 3px rgb(251 116 166 / 0.5);
 }
 
 .nav-link{
@@ -97,14 +104,41 @@
 .article-bg{
     background-image: url(./features/assets/logo-bg.svg);
     mask-image: url(./features/assets/logo-transparency.png);
-    filter: drop-shadow(4px 4px 3px rgb(0 0 0 / 0.5));
-    height: 563px;
-    width: 900px;
+    filter: drop-shadow(4px 4px 3px rgb(251 116 166 / 0.5));
+    height: 625px;
+    width: 1000px;
+}
+
+.welcome{
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+}
+
+.welcome-title{
+    font-size: 10rem;
+    font-family: 'Josefin Sans', Tahoma, Verdana, sans-serif;
+    text-shadow: 4px 4px 3px rgb(251 116 166 / 0.5);
+    margin-left: 2vw;
+}
+
+.article-text{
+    font-size: 2rem;
+    width: 47rem;
+    margin-left: 4vw;
+    font-family: 'Play', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 @media screen and (max-width: 1525px) {
     .nav-link{
         font-size: x-large;
+    }
+    .article-text{
+        font-size: 1.5rem;
+    }
+    .welcome-title{
+        margin-top: 8rem;
+        font-size: 8rem;
     }
 }
 
@@ -113,13 +147,24 @@
         rotate: 30deg;
         margin-left: -5vw;
         margin-right: -5vw;
-        margin-top: 8.5vh;
-        margin-bottom: 8vh;
+        margin-top: 3rem;
+        margin-bottom: 3rem;
     }
     .link-container{
         height: max-content;
         align-items: top;
         border-radius: 5rem 0rem 0rem 5rem;
+    }
+    .article-text{
+        font-size: 1.3rem;
+        margin-top: -2rem;
+        width: 30rem;
+    }
+    .welcome-title{
+        font-size: 6rem;
+    }
+    .article-bg{
+        flex: 1 1 auto;
     }
 }
 
@@ -129,6 +174,7 @@
         transition: .1s;
     }
     .nav-link{
+        padding: .8rem .7rem;
         rotate: 30deg;
         margin-left: -2rem;
         margin-right: -2rem;
@@ -148,6 +194,31 @@
     .nav-link{
         rotate: 50deg;
         font-size: medium;
-        padding: 0rem .5rem;
+        transition: .2s;
+    }
+    .article-text{
+        width: 95vw;
+        padding: 1rem;
+    }
+    .welcome-title{
+        font-size: 5rem;
+    }
+    .welcome{
+        flex-direction: column;
+        align-items: center;
+        margin-left: 2.5vw;
+        margin-top: -3rem;
+    }
+    .article-bg{
+        display: none;
+    }
+}
+
+@media screen and (max-height: 700px) {
+    .logo-container{
+        display: none;
+    }
+    .welcome{
+        margin-top: -7rem;
     }
 }
