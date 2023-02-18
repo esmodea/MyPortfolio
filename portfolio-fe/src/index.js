@@ -1,4 +1,5 @@
 import React from 'react';
+import antd, {Layout} from 'antd';
 import { createRoot } from 'react-dom/client';
 import { Provider } from 'react-redux';
 import { store } from './features/state/store';
@@ -14,7 +15,9 @@ root.render(
   <Router>
     <React.StrictMode>
       <Provider store={store}>
-        <App />
+        <Layout>
+          <App />
+        </Layout>
       </Provider>
     </React.StrictMode>
   </Router>

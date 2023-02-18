@@ -11,6 +11,8 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    background-color: #66C2FB;
+    transition: 0s;
 }
 
 .main-logo{
@@ -127,6 +129,72 @@
     width: 47rem;
     margin-left: 4vw;
     font-family: 'Play', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.content-bg-top{
+    padding: 0px;
+    background-image: linear-gradient(175deg, #66C2FB, #66C2FB,  #022E54, #022E54);
+    background-size: 100% 50%;
+    background-repeat: no-repeat;
+}
+
+.content-bg-bottom{
+    padding: 0px;
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(175deg, #022E54, #022E54,  #66C2FB, #66C2FB);
+    background-size: 100% 50%;
+    background-position: bottom;
+    background-repeat: no-repeat;
+}
+
+.content{
+    background-image: url(./features/assets/code.png);
+    background-repeat: no-repeat;
+    background-position: left;
+    width: 100vw;
+    height: 150vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.light{
+    color: #A3D4FD;
+}
+
+.scroll{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    animation-duration: 2s;
+    opacity: 0;
+}
+
+.scroll-text{
+    font-family: 'Josefin Sans', Tahoma, Verdana, sans-serif;
+}
+
+.scroll-icon{
+    font-size: 48px;
+}
+
+@keyframes leave {
+    0% {margin-top: 0rem; opacity: 100;}
+    50% {
+            margin-top: 20rem;
+            opacity: 0;
+        }
+    80% {
+        margin-top: 0rem;
+        opacity: 0;
+    }
+}
+
+@keyframes float {
+    0% {margin-top: 0rem; opacity: 100;}
+    50% {margin-top: .5rem; opacity: 100;}
+    100% {margin-top: 0rem; opacity: 100;}    
 }
 
 @media screen and (max-width: 1525px) {

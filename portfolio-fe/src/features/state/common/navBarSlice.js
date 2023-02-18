@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    selectedPage: 0
+    selectedPage: 1
 }
 
 const navSlice = createSlice({
