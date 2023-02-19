@@ -10,7 +10,7 @@ const Footer = () => {
     return (
         <>
             <div className='footer'>
-                <Link className='footer-link' to={'https://www.linkedin.com/in/esmodea-burk/'} >My LinkedIn</Link>
+                <Link className='footer-link' target={'_blank'} to={'https://www.linkedin.com/in/esmodea-burk/'} >My LinkedIn</Link>
                 <p className='footer-dot'>.</p>
                 <Link className='footer-link' onClick={() => {copyEmail()}} >My Email</Link>
                 <p className='footer-dot'>.</p>
