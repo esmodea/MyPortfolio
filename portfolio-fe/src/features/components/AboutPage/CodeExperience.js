@@ -4,10 +4,10 @@ import { useEffect, useState } from "react";
 
 
 const CodeExperience = () => {
-    const [display, setDisplay] = useState({animationName: 'float', animationIterationCount: 'infinite'});
+    const [display, setDisplay] = useState({animationName: 'float', animationIterationCount: 'infinite', animationDuration: '2s'});
 
     useEffect(() => {
-        window.onscroll = () => {setDisplay({animationName: 'leave', animationIterationCount: 1})};
+        window.onscroll = () => {setDisplay({animationName: 'leave', animationIterationCount: 1, animationDuration: '.75s'})};
     }, [])
     return (
         <>
