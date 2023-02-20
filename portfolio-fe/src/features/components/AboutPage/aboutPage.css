@@ -85,6 +85,9 @@
     font-size: 48px;
 }
 
+.about-content{
+    display: flex;
+}
 
 @keyframes leave {
     0% {margin-top: 0rem; opacity: 100;}

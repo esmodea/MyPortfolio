@@ -3,7 +3,8 @@ import NavBar from "../common/NavBar";
 import Welcome from './Welcome';
 import CodeExperience from "./CodeExperience";
 import Footer from '../common/Footer';
-import './aboutPage.css'
+import SelfDesc from "./SelfDesc";
+import './aboutPage.css';
 
 const AboutPage = () => {
     return (
@@ -12,6 +13,7 @@ const AboutPage = () => {
                 <NavBar />
                 <Welcome />
                 <CodeExperience /> 
+                <SelfDesc />
                 <Footer />
             </div>
         </>
