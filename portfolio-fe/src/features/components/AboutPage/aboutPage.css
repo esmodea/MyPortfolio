@@ -23,6 +23,8 @@
     font-family: 'Josefin Sans', Tahoma, Verdana, sans-serif;
     text-shadow: 4px 4px 3px rgb(251 116 166 / 0.5);
     margin-left: 2vw;
+    margin-bottom: 0px;
+    color: #011526;
 }
 
 .article-text{
@@ -30,6 +32,7 @@
     width: 47rem;
     margin-left: 4vw;
     font-family: 'Play', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #011526;
 }
 
 .content-bg-top{
@@ -88,12 +91,24 @@
 .about-content{
     display: flex;
     justify-content: space-between;
-    align-items: start;
+    align-items: center;
     width: 80vw;
 }
 
 .about-content > img{
     filter: drop-shadow(7px 7px 5px rgb(251 116 166 / 0.5));
+}
+
+.about-content > article > a{
+    color: #011526;
+    text-shadow: 2px 2px 2px #011526;
+    transition: .3s;
+}
+
+.about-content > article > a:hover{
+    transition: .3s;
+    text-shadow: 3px 3px 2px #011526;
+    color: #FB90B7;
 }
 
 @keyframes leave {
