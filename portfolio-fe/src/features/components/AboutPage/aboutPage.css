@@ -87,6 +87,13 @@
 
 .about-content{
     display: flex;
+    justify-content: space-between;
+    align-items: start;
+    width: 80vw;
+}
+
+.about-content > img{
+    filter: drop-shadow(7px 7px 5px rgb(251 116 166 / 0.5));
 }
 
 @keyframes leave {
