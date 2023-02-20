@@ -3,6 +3,7 @@ import NavBar from "../common/NavBar";
 import Welcome from './Welcome';
 import CodeExperience from "./CodeExperience";
 import Footer from '../common/Footer';
+import './aboutPage.css'
 
 const AboutPage = () => {
     return (

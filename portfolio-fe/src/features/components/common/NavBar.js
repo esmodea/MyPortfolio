@@ -2,7 +2,8 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectPage } from '../../state/common/navBarSlice';
-import logo from '../../assets/logo.svg'
+import logo from '../../assets/logo.svg';
+import './common.css';
 
 const NavBar = () => {
     const dispatch = useDispatch();
