@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    selectedPage: 1
+    selectedPage: '/about'
 }
 
 const navSlice = createSlice({
@@ -9,8 +9,8 @@ const navSlice = createSlice({
     initialState,
     reducers:{
         selectPage: (state, action) => {
-            if(typeof action.payload === 'number'){
-                state.selectedPage = action.payload
+            if(typeof action.payload === 'string'){
+                state.selectedPage = action.payload;
             }
         }
     }
