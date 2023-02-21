@@ -1,0 +1,68 @@
+.login-bg{
+    background-color: #034873;
+    object-fit: cover;
+    mask-image: url('../../assets/picture-transparency.png');
+    mask-size: 100vw;
+    height: 100vh;
+    width: 100vw;
+    margin-top: -100vh;
+    z-index: 0;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.login-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+}
+
+.login-window{
+    background-color: #66C2FB;
+    position: fixed;
+    top: 45vh;
+    bottom: 50vh;
+    left: 45vw;
+    right: 50vw;
+    padding: 3rem;
+    border-radius: 2rem;
+    box-shadow: 1px 1px 5px #034873;
+    width: max-content;
+    height: max-content;
+}
+
+.login-button{
+    border-width: .2rem;
+    border-radius: 1rem;
+    padding: 1rem;
+    background-color: #034873;
+    color: #A3D4FD;
+    border-color: #034873;
+    font-family: 'Play', sans-serif;
+    border-style: solid;
+    transition: 1s;
+}
+
+.login-button:hover{
+    box-shadow: 1px 1px 5px #034873;
+    transition: 1s;
+}
+
+.info{
+    align-self: flex-end;
+    margin-right: 2rem;
+    background-color: #034873;
+    color: #A3D4FD;
+    border-radius: 1rem;
+    padding: .5rem 1rem;
+    font-family: 'Josefin sans', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.5em;
+}
+
+.nav, .footer, .page-container, .login-content{
+    z-index: 1;
+}

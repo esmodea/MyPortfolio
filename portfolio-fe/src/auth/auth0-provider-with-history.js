@@ -7,7 +7,7 @@ const Auth0ProviderWithHistory = ({children}) => {
     const clientId = process.env.REACT_APP_AUTH0_CLIENT_ID;
     const navigate = useNavigate();
     const onRedirectCallback = (appState) => {
-        navigate(window.location.pathname);
+        navigate('/abilities');
     };
     
     return (
@@ -17,6 +17,7 @@ const Auth0ProviderWithHistory = ({children}) => {
             authorizationParams={{
                 redirect_uri: `${window.location.origin}/abilities`,
             }}
+            onRedirectCallback={onRedirectCallback}
         >
             {children}
         </Auth0Provider>
