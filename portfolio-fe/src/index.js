@@ -5,6 +5,7 @@ import { Provider } from 'react-redux';
 import { store } from './features/state/store';
 import { BrowserRouter as Router } from 'react-router-dom';
 import App from './App';
+import Auth0ProviderWithHistory from './auth/auth0-provider-with-history';
 import reportWebVitals from './reportWebVitals';
 import './index.css';
 
@@ -16,7 +17,9 @@ root.render(
     <React.StrictMode>
       <Provider store={store}>
         <Layout>
-          <App />
+          <Auth0ProviderWithHistory>
+            <App />
+          </Auth0ProviderWithHistory>
         </Layout>
       </Provider>
     </React.StrictMode>
