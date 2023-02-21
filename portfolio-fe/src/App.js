@@ -1,7 +1,7 @@
 import React from 'react';
-import AboutPage from './features/components/AboutPage/AboutPage';
+import AboutPage from './features/components/1-AboutPage/AboutPage';
 import './App.css';
-import { Route, Routes, Navigate } from 'react-router-dom'
+import { Route, Routes, Navigate } from 'react-router-dom';
 
 function App() {
   return (
