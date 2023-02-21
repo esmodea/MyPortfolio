@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectPage } from '../../state/common/navBarSlice';
 import logo from '../../assets/logo.svg';
+import altlogo from '../../assets/Logo.png';
 import './common.css';
 
 const NavBar = () => {
@@ -17,9 +18,9 @@ const NavBar = () => {
         <>
             <div className='nav'>
                 <Link onClick={() => {handleSelection(1)}} to={'/'} className={`logo-container`}>
-                    <img
+                    <object
                       className='main-logo'
-                      src={logo}
+                      data={logo ? logo : altlogo}
                       alt='Esmodea Burk'
                       width={'288px'}
                       height={'180px'}
