@@ -1,0 +1,108 @@
+.job-title, .underlined{
+    font-size: xx-large;
+    font-family: 'Josefin Sans', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #011526;
+    margin-bottom: -1rem;
+}
+
+.underlined{
+    height: min-content;
+    width: 100%;
+    border-bottom: solid 1px #011526;
+    flex-basis: 0 0 auto;
+    margin-bottom: 2rem;
+}
+
+.underlined > h2{
+    margin: 5rem 0px 0px 0px;
+}
+
+.bold-link{
+    color: #011526;
+    font-weight: bolder;
+}
+
+button.bold-link{
+    background: none;
+    border: none;
+    color: #011526;
+    font-weight: bolder;
+    font-family: 'Play', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: large;
+}
+
+.bold-link:hover{
+    transition: .2s;
+    color: #94E7FA;
+    cursor: pointer;
+}
+
+.contact-info{
+    font-family: 'Play', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: large;
+    color: #011526;
+}
+
+.resume-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 85vw;
+    padding: 2rem 5vw;
+}
+
+.horizontal{
+    display: flex;
+    align-items: center;
+}
+
+.bold{
+    margin: 0px;
+    margin-right: 1rem;
+    font-size: xx-large;
+    font-family: 'Josefin Sans', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.text{
+    font-size: x-large;
+    font-family: 'Play', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.project{
+    width: 100%;
+}
+
+.title-div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.small-title{
+    margin: 0px;
+    font-size: x-large;
+    font-family: 'Josefin Sans', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-right: auto;
+}
+
+.button{
+    margin-right: 1rem;
+    justify-self: flex-end;
+    margin-right: .5rem;
+    flex: 0 0 auto;
+    border-radius: .5rem;
+    padding: .5rem 1rem;
+    background-color: #43D5F5;
+    border: solid .3rem #94E7FA;
+    color: #011526;
+    font-family: 'Play', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    transition: .8s;
+}
+
+.button:hover{
+    box-shadow: 2px 2px 5px rgb(251 116 166 / 0.5);
+    color: #011526;
+    transition: .8s;
+}
