@@ -11,14 +11,7 @@
     bottom: 0;
     right: 0;
     background-color: rgba(0, 0, 0, 0);
-    animation: fadeIn 5s;
-    animation-iteration-count: 1;
-}
-
-@keyframes fadeIn {
-    0% {opacity: 0;}
-    50% {opacity: 0;}
-    100% {opacity: 100;}
+    transition: 1s;
 }
 
 .login-content{
