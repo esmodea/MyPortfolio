@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import NavBar from '../common/NavBar';
-import Footer from '../common/Footer';
 import { useAuth0 } from '@auth0/auth0-react';
 import './abilities.css';
-import './footerfix.css';
 
 const Login = () => {
     const { loginWithRedirect, isAuthenticated } = useAuth0();

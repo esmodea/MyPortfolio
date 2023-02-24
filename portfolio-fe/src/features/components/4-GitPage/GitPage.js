@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import NavBar from '../common/NavBar';
+import Footer from '../common/Footer';
 import LeftIcon from './LeftIcon';
 import RightIcon from './RightIcon';
 import contents from './contents';
-import './gitpage.css'
+import './gitpage.css';
 
 const GitPage = () => {
     let isLeft = false
@@ -19,6 +20,7 @@ const GitPage = () => {
                         return <RightIcon icon={item.icon} text={item.text} href={item.href}/>
                     }
                 }) : 'Loading Page...'}
+                <Footer/>
             </div>
         </>
     )
