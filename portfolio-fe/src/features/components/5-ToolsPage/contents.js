@@ -1,3 +1,17 @@
+import html from '../../assets/ToolsIcons/html.png';
+import css from '../../assets/ToolsIcons/css.png';
+import js from '../../assets/ToolsIcons/js.png';
+import react from '../../assets/ToolsIcons/react.png';
+import router from '../../assets/ToolsIcons/router.png';
+import redux from '../../assets/ToolsIcons/redux.png';
+import axios from '../../assets/ToolsIcons/axios.png';
+import sql from '../../assets/ToolsIcons/sql.png';
+import express from '../../assets/ToolsIcons/express.png';
+import node from '../../assets/ToolsIcons/node.png';
+import git from '../../assets/ToolsIcons/git.png';
+import vsc from '../../assets/ToolsIcons/vsc.png';
+
+
 const contents = {
     frontEnd: [
         {
