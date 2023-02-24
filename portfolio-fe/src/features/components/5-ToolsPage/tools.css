@@ -1,0 +1,42 @@
+.item{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.item-text{
+    font-family: 'Play';
+    font-size: x-large;
+    width: 50%;
+}
+
+.background > .item > .item-text{
+    color: #A3D4FD;
+}
+
+.item-icon{
+    height: 15vh;
+    margin-bottom: 8vh;
+    width: 50%;
+    object-fit: scale-down;
+}
+
+.foreground{
+    width: 100vw;
+    padding: 10vh 10vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.background{
+    width: 100vw;
+    padding: 10vh 10vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #034873;
+    box-shadow: inset 0px 15px 4px rgb(0 0 0 / 0.25);
+}
