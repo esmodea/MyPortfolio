@@ -5,9 +5,9 @@ const Foreground = ({itemArr}) => {
     return(
         <>
             <div className='foreground'>
-                {itemArr.map((item) => {
-                    <Item text={item.text} icon={item.icon} flex={'row'} />
-                })}
+                {itemArr ? itemArr.map((item) => {
+                    return <Item text={item.text} icon={item.icon} flex={'row'} />
+                }): <div>Is Loading...</div>}
             </div>
         </>
     );
