@@ -30,7 +30,6 @@ const contents = [
         text: 'This one is a neat little Etch-A-Sketch tool that lets you choose the canvas size. It darkens each pixel by a certain amount upon mouse over. ',
         href: 'https://esmodea.github.io/Etch-A-Sketch/'
     }
-
 ];
 
 export default contents;
