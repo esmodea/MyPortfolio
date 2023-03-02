@@ -10,9 +10,11 @@
   "repository": "https://github.com/bloominstituteoftechnology/node-db1-guided.git",
   "license": "MIT",
   "dependencies": {
-    "sqlite3": "^5.0.8",
+    "dotenv": "^16.0.3",
     "express": "^4.17.3",
-    "knex": "^2.0.0"
+    "knex": "^2.0.0",
+    "mysql": "^2.18.1",
+    "sqlite3": "^5.0.8"
   },
   "devDependencies": {
     "eslint": "^8.12.0",
