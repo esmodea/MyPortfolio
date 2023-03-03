@@ -28,7 +28,7 @@ pool.getConnection((err, con) => {
     con.query(`INSERT INTO main.gitData (icon, text, href, userID) VALUES ('../../assets/MyGithubIcons/RPS.jpg', 'Here is my first real JavaScript application. I keep it here because I remember it fondly.', 'https://esmodea.github.io/RockPaperScissors/', 1)`, (err, result, fields) => {
         console.log(result);
     })
-    con.query(`INSERT INTO main.gitData (icon, text, href, userID) VALUES ('../../assets/MyGithubIcons/Etch-A-Sketch.jpg', 'This one is a neat little Etch-A-Sketch tool that lets you choose the canvas size. It darkens each pixel by a certain amount upon mouse over.', 'https://esmodea.github.io/Etch-A-Sketch/'), 1`, (err, result, fields) => {
+    con.query(`INSERT INTO main.gitData (icon, text, href, userID) VALUES ('../../assets/MyGithubIcons/Etch-A-Sketch.jpg', 'This one is a neat little Etch-A-Sketch tool that lets you choose the canvas size. It darkens each pixel by a certain amount upon mouse over.', 'https://esmodea.github.io/Etch-A-Sketch/', 1)`, (err, result, fields) => {
         console.log(result);
     })
 })

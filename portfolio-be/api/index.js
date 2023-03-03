@@ -58,6 +58,7 @@ app.get('/resume', (req, res) => {
 });
 
 app.get('/github', (req, res) => {
+    res.header('Access-Control-Allow-Origin', 'http://localhost:3000')
     pool.getConnection((err, con) => {
         con.connect((err) => {
             con.query(`SELECT icon, text, href FROM main.gitData as Data`, (err, result, fields) => {
@@ -71,6 +72,7 @@ app.get('/github', (req, res) => {
 });
 
 app.get('/tools', (req, res) => {
+    res.header('Access-Control-Allow-Origin', 'http://localhost:3000')
     pool.getConnection((err, con) => {
         con.connect((err) => {
             con.query(`SELECT type, text, icon FROM main.toolsTypes as Types LEFT JOIN main.toolsData as Data ON Types.id = Data.typeID`, (err, result, fields) => {

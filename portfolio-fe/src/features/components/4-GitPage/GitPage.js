@@ -1,12 +1,21 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux'
 import NavBar from '../common/NavBar';
 import Footer from '../common/Footer';
 import LeftIcon from './LeftIcon';
 import RightIcon from './RightIcon';
-import contents from './contents';
+import { fetchGit } from '../../state/gitState/gitSlice';
 import './gitpage.css';
 
 const GitPage = () => {
+    const state = useSelector((state) => state.git)
+    const dispatch = useDispatch();
+    const contents = state.data;
+
+    useEffect(() => {
+        dispatch(fetchGit())
+    }, [dispatch])
+
     let isLeft = false
     return(
         <>
