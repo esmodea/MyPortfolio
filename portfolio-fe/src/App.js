@@ -15,7 +15,6 @@ import './App.css';
 function App() {
   const dispatch = useDispatch();
   const location = useLocation();
-  console.log(location)
   useEffect(() => {dispatch(selectPage(location.pathname));});
   
 

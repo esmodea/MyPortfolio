@@ -44,10 +44,11 @@ app.get('/users', (req, res) => {
 });
 
 app.get('/resume', (req, res) => {
+    res.header('Access-Control-Allow-Origin', 'http://localhost:3000')
     pool.getConnection((err, con) => {
         con.connect((err) => {
-            con.query(`SELECT title, smallTitle, github, website, text FROM main.resumeData as Data LEFT JOIN main.resumeContent as Content ON Data.id = Content.titleID LEFT JOIN main.resumeText as Text ON Content.contentID = Text.contentID ORDER BY Data.id, Content.contentID, Text.textID ASC`, (err, result, fields) => {
-                console.log(err, result, fields)
+            con.query(`SELECT id, Content.contentID, Text.textID, title, smallTitle, github, website, text FROM main.resumeData as Data LEFT JOIN main.resumeContent as Content ON Data.id = Content.titleID LEFT JOIN main.resumeText as Text ON Content.contentID = Text.contentID ORDER BY Data.id, Content.contentID, Text.textID ASC`, (err, result, fields) => {
+                // console.log(err, result, fields)
                 if (err) res.send(err);
                 if (result) res.send(result);
             })
@@ -59,7 +60,7 @@ app.get('/resume', (req, res) => {
 app.get('/github', (req, res) => {
     pool.getConnection((err, con) => {
         con.connect((err) => {
-            con.query(`SELECT type, text, icon FROM main.toolsTypes as Types LEFT JOIN main.toolsData as Data ON Types.id = Data.typeID`, (err, result, fields) => {
+            con.query(`SELECT icon, text, href FROM main.gitData as Data`, (err, result, fields) => {
                 console.log(err, result, fields)
                 if (err) res.send(err);
                 if (result) res.send(result);
