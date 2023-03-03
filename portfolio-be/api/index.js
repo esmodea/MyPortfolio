@@ -75,7 +75,7 @@ app.get('/tools', (req, res) => {
     res.header('Access-Control-Allow-Origin', 'http://localhost:3000')
     pool.getConnection((err, con) => {
         con.connect((err) => {
-            con.query(`SELECT type, text, icon FROM main.toolsTypes as Types LEFT JOIN main.toolsData as Data ON Types.id = Data.typeID`, (err, result, fields) => {
+            con.query(`SELECT Data.id, Types.id as typeID, type, text, icon FROM main.toolsTypes as Types LEFT JOIN main.toolsData as Data ON Types.id = Data.typeID`, (err, result, fields) => {
                 console.log(err, result, fields)
                 if (err) res.send(err);
                 if (result) res.send(result);
