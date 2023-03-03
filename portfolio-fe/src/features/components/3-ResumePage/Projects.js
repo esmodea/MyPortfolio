@@ -7,7 +7,7 @@ const Projects = ({title, content}) => {
     return (
         <>
             <Title className={'underlined'} text={title} />
-            {content.map(({smallTitle, text, github, website}) => {
+            {content? content.map(({smallTitle, text, github, website}) => {
                 return (
                     <div className="project">
                         <div className="title-div">
@@ -22,7 +22,7 @@ const Projects = ({title, content}) => {
                         }) : <></>}
                     </div>
                 )
-            })}
+            }): 'is loading...'}
         </>
     )
 };

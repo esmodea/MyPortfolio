@@ -29,30 +29,36 @@ const cacheState = createSlice({
         },
         pushCacheResume: (state, {payload}) => {
             // console.log('delivered payload!')
-            // console.log(payload)
-            state.resume.cache[payload.id] = {title: payload.title};
+            console.log(payload)
+            if(payload.id){
+                state.resume.cache[payload.id] = {title: payload.title};
+            }
         },
         pushContentCacheResume: (state, {payload}) => {
             // console.log('delivered payload!')
             // console.log(payload)
-            state.resume.contentCache[payload.id] = {
-                id: payload.id,
-                parentID: payload.parentID,
-                content: {
-                    smallTitle: payload.content.smallTitle,
-                    github: payload.content.github,
-                    website: payload.content.website
-                }
-            };
+            if(payload.id){
+                state.resume.contentCache[payload.id] = {
+                    id: payload.id,
+                    parentID: payload.parentID,
+                    content: {
+                        smallTitle: payload.content.smallTitle,
+                        github: payload.content.github,
+                        website: payload.content.website
+                    }
+                };
+            }
         },
         pushTextCacheResume: (state, {payload}) => {
             // console.log('delivered payload!')
             // console.log(payload)
-            state.resume.textCache[payload.id] = {
-                id: payload.id,
-                parentID: payload.parentID,
-                text: payload.text
-            };
+            if(payload.id){
+                state.resume.textCache[payload.id] = {
+                    id: payload.id,
+                    parentID: payload.parentID,
+                    text: payload.text
+                };
+            }
         },
         attachToContentResume: (state, {payload}) => {
             // console.log(state.contentCache, state.contentCache[payload.id], payload)
@@ -69,17 +75,21 @@ const cacheState = createSlice({
         },
         pushContentCacheTools: (state, {payload}) => {
             // console.log(payload)
-            state.tools.contentCache[payload.id] = {
-                id: payload.id,
-                parentID: payload.parentID,
-                content: {
-                    text: payload.content.text,
-                    icon: payload.content.icon
-                }
-            };
+            if(payload.id){
+                state.tools.contentCache[payload.id] = {
+                    id: payload.id,
+                    parentID: payload.parentID,
+                    content: {
+                        text: payload.content.text,
+                        icon: payload.content.icon
+                    }
+                };
+            }
         }, 
         pushCacheTools: (state, {payload}) => {
-            state.tools.cache[payload.id] = {id: payload.id, type: payload.type};
+            if(payload.id){
+                state.tools.cache[payload.id] = {id: payload.id, type: payload.type};
+            }
         }
     }
 })

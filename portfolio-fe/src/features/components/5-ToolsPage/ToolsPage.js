@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import NavBar from '../common/NavBar';
 import Foreground from './Foreground';
@@ -10,6 +10,7 @@ import './tools.css';
 const ToolsPage = () => {
     const state = useSelector(state => state.tools);
     const { cache, contentCache } = useSelector(state => state.cache.tools);
+    const [display, setDisplay] = useState([]);
     const dispatch = useDispatch();
     let isIndent = true;
     
@@ -49,7 +50,7 @@ const ToolsPage = () => {
         console.log(cache, contentCache)
         for(let i = 0; i < content.length; i++){
             // console.log(content[i], content, final[content[i].parentID - 1]);
-            
+            console.log(final)
             if(!final[content[i].parentID - 1].content){
                 final[content[i].parentID - 1] = {
                     type: final[content[i].parentID - 1].type,
@@ -82,22 +83,19 @@ const ToolsPage = () => {
     })
 
     useEffect(() => {
-        if(state.firstLoad){
-            dispatch(fetchTools());
-        }
+        dispatch(fetchTools());
     }, [dispatch])
 
     useEffect(() => {
-        if(state.firstLoad){
-            populateCache(state.data);
-        }
+        populateCache(state.data);
+        setDisplay(toolsFilter());
     }, [state.data])
 
     return(
         <>
             <div className='page-container' >
                 <NavBar/>
-                {toolsFilter().map((item) => {
+                {display.map((item) => {
                     console.log(item)
                     isIndent = !isIndent;
                     if(isIndent){

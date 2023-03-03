@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchResume } from '../../state/resumeState/resumeSlice';
 import NavBar from '../common/NavBar';
@@ -7,12 +7,12 @@ import Overall from './Overall';
 import Projects from './Projects';
 import { updateCacheResume, pushCacheResume, pushContentCacheResume, pushTextCacheResume } from '../../state/common/cacheSlice';
 import './resume.css'
-import axios from 'axios';
 
 const ResumePage = () => {
     const state = useSelector(state => state.resume);
     const { cache, contentCache, textCache } = useSelector(state => state.cache.resume);
     const dispatch = useDispatch();
+    const [display, setDisplay] = useState([]);
 
     const populateCache = (arr) => {
         arr.map((item) => { 
@@ -101,22 +101,15 @@ const ResumePage = () => {
         }
         return final;
     }
-    let display;
-    if(state.firstLoad){
-        display = resumeFilter();
-    }
 
     useEffect(() => {
-        if(state.firstLoad){
-            dispatch(fetchResume());
-        }
+        dispatch(fetchResume());
         // dispatch(updateCache({cache: [], contentCache: [], textCache: []}))
     }, [dispatch])
 
     useEffect(() => {
-        if(state.firstLoad){
-            populateCache(state.data);
-        }
+        populateCache(state.data);
+        setDisplay(resumeFilter());
     }, [state.data])
 
     return(
