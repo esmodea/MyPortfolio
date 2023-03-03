@@ -2,6 +2,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
 const initialState = {
+    firstLoad: true,
     data: [],
     isLoading: false,
     error: ''
@@ -29,18 +30,31 @@ const gitSlice = createSlice({
     initialState,
     reducers:{},
     extraReducers: (builder) => {
-        builder.addCase(fetchGit.pending, (state) => {
-            state.data = []
-            state.isLoading = true;
-        })
-        builder.addCase(fetchGit.fulfilled, (state, action) => {
-            state.data = action.payload
-            state.isLoading = false;
-        })
-        builder.addCase(fetchGit.rejected, (state, action) => {
-            state.isLoading = false;
-            state.error = action.error.message;
-        })
+            builder.addCase(fetchGit.pending, (state) => {
+                return(
+                    {
+                        ...state,
+                        isLoading: true
+                    }
+                )
+            })
+            builder.addCase(fetchGit.fulfilled, (state, action) => {
+                return(
+                    {
+                        ...state,
+                        data: action.payload,
+                        isLoading: false
+                    }
+                )
+            })
+            builder.addCase(fetchGit.rejected, (state, action) => {
+                return(
+                    {
+                        ...state,
+                        error: action.error
+                    }
+                )   
+            })
     }
 });
 

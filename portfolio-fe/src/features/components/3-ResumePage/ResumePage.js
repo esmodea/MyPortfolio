@@ -5,59 +5,119 @@ import NavBar from '../common/NavBar';
 import Footer from '../common/Footer';
 import Overall from './Overall';
 import Projects from './Projects';
+import { updateCacheResume, pushCacheResume, pushContentCacheResume, pushTextCacheResume } from '../../state/common/cacheSlice';
 import './resume.css'
 import axios from 'axios';
 
 const ResumePage = () => {
-    const state = useSelector((state) => state.resume)
+    const state = useSelector(state => state.resume);
+    const { cache, contentCache, textCache } = useSelector(state => state.cache.resume);
     const dispatch = useDispatch();
-    const cache = [];
-    const contentCache = [];
-    const textCache = [];
 
-    const resumeFilter = (arr) => {
-        arr.map((item) => {
-            if(!cache[item.id])cache[item.id] = {id: item.id, title: item.title};
-            if(!contentCache[item.contentID])contentCache[item.contentID] = {id: item.contentID, parentID: item.id, content: {
-                smallTitle: item.smallTitle,
-                github: item.github,
-                website: item.website
-            }};
-            if(!textCache[item.textID])textCache[item.textID] = {id: item.textID, parentID: item.contentID, text: item.text};
-        })
-        for(let i = 1; i <= textCache.length; i++){
-            for(let x = 1; x <= contentCache.length; x++){
-                if(textCache[i]){
-                    if(x == textCache[i].parentID){
-                        if(contentCache[x].content.text){
-                            contentCache[x].content.text.push(textCache[i].text);
-                        } else {
-                            contentCache[x].content.text = [textCache[i].text];
-                        }
-                    }
-                }
+    const populateCache = (arr) => {
+        arr.map((item) => { 
+            // console.log('item', item) 
+            if(!cache[item.id]){
+                const newObj = {id: item.id, title: item.title};
+                // console.log('newObj', newObj)
+                dispatch(pushCacheResume(newObj)); 
             }
-        }
+            if(!contentCache[item.contentID]){
+                const newObj = {
+                    id: item.contentID,
+                    parentID: item.id,
+                    content: {
+                        smallTitle: item.smallTitle,
+                        github: item.github,
+                        website: item.website,
+                        text: []
+                    } 
+                } 
+                // console.log('newObj', newObj) 
+                dispatch(pushContentCacheResume(newObj)); 
+            };   
+            if(!textCache[item.textID]){
+                const newObj = {id: item.textID, parentID: item.contentID, text: item.text};
+                // console.log('newObj', newObj) 
+                if(item.textID !== null)dispatch(pushTextCacheResume(newObj));
+            }
+        });
+    }
+
+    const resumeFilter = () => {
+        let final = []
+        let content = []
+        let text = [...textCache];
+        text.shift();
         for(let i = 1; i <= contentCache.length; i++){
-            for(let x = 1; x <= cache.length; x++){
-                if(contentCache[i]){
-                    if(x == contentCache[i].parentID){
-                        if(cache[x].content){
-                            cache[x].content.push(contentCache[i].content)
-                        } else {
-                            cache[x].content = [contentCache[i].content];
-                        }
-                    }
+            if(contentCache[i]){
+                content[i] = {
+                    parentID: contentCache[i].parentID,
+                    smallTitle: contentCache[i].content.smallTitle,
+                    github: contentCache[i].content.github,
+                    website: contentCache[i].content.website
                 }
             }
         }
-        console.log(cache, contentCache, textCache)
-        return cache;
+        for(let i = 0; i < text.length; i++){
+            // console.log(text[i])
+            if(!content[text[i].parentID].text){
+                content[text[i].parentID] = {
+                    parentID: contentCache[text[i].parentID].parentID,
+                    smallTitle: contentCache[text[i].parentID].content.smallTitle,
+                    github: contentCache[text[i].parentID].content.github,
+                    website: contentCache[text[i].parentID].content.website,
+                    text: [text[i].text]
+                }
+            } else {
+                content[text[i].parentID].text.push(text[i].text)
+            }
+        }
+        content = [...content]
+        content.shift();
+        final = [...cache]
+        final.shift();
+        for(let i = 0; i < content.length; i++){
+            // console.log(content[i], content, final[content[i].parentID - 1]);
+            
+            if(!final[content[i].parentID - 1].content){
+                final[content[i].parentID - 1] = {
+                    title: final[content[i].parentID - 1].title,
+                    content: [{
+                        smallTitle: content[i].smallTitle,
+                        github: content[i].github,
+                        website: content[i].website,
+                        text: content[i].text
+                    }]
+                }
+            } else {
+                final[content[i].parentID - 1].content.push({
+                    smallTitle: content[i].smallTitle,
+                    github: content[i].github,
+                    website: content[i].website,
+                    text: content[i].text
+                })
+            }
+        }
+        return final;
+    }
+    let display;
+    if(state.firstLoad){
+        display = resumeFilter();
     }
 
     useEffect(() => {
-        dispatch(fetchResume())
+        if(state.firstLoad){
+            dispatch(fetchResume());
+        }
+        // dispatch(updateCache({cache: [], contentCache: [], textCache: []}))
     }, [dispatch])
+
+    useEffect(() => {
+        if(state.firstLoad){
+            populateCache(state.data);
+        }
+    }, [state.data])
 
     return(
         <>
@@ -65,7 +125,8 @@ const ResumePage = () => {
                 <NavBar/>
                 <div className='resume-container'>
                     <Overall />
-                    {resumeFilter(state.data).map(({title, content}) => {
+                    {console.log(display)}
+                    {resumeFilter().map(({title, content}) => {
                         return <Projects title={title} content={content} />
                     })}
                 </div>

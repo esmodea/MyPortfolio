@@ -2,6 +2,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
 const initialState = {
+    firstLoad: true,
     data: [],
     isLoading: false,
     error: ''
@@ -30,16 +31,32 @@ const resumeSlice = createSlice({
     reducers:{},
     extraReducers: (builder) => {
         builder.addCase(fetchResume.pending, (state) => {
-            state.data = []
-            state.isLoading = true;
+            return(
+                {
+                    ...state,
+                    isLoading: true,
+                    firstLoad: false
+                }
+            )
         })
         builder.addCase(fetchResume.fulfilled, (state, action) => {
-            state.data = action.payload
-            state.isLoading = false;
+            return(
+                {
+                    ...state,
+                    data: action.payload,
+                    isLoading: false,
+                    firstLoad: false
+                }
+            )
         })
         builder.addCase(fetchResume.rejected, (state, action) => {
-            state.isLoading = false;
-            state.error = action.error.message;
+            return(
+                {
+                    ...state,
+                    error: action.error,
+                    firstLoad: false
+                }
+            )
         })
     }
 });
