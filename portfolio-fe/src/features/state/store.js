@@ -15,6 +15,7 @@ export const store = configureStore({
         tools: toolsSlice,
         cache: cacheSlice,
         user: userSlice,
+        dashboardPage: dashboardState.dashboardSlice,
         userForm: dashboardState.userFormSlice,
     }
 })

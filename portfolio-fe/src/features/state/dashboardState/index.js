@@ -1,2 +1,3 @@
 import userFormSlice from "./userFormSlice"
-export default { userFormSlice } 
+import dashboardSlice from "./dashboardSlice"
+export default { userFormSlice, dashboardSlice } 
