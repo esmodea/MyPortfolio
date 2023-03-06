@@ -1,17 +1,14 @@
 import React from 'react';
 import NavBar from '../common/NavBar';
-import Footer from '../common/Footer';
-import { useAuth0 } from '@auth0/auth0-react';
+import Form from './Form';
 import './abilities.css';
 
 const AbilitiesPage = () => {
-    const {isLoading, user, logout} = useAuth0();
     return(
         <>
-            <div className='page-container' >
+            <div className='page-container abilities'>
                 <NavBar />
-                <button onClick={() => logout()}>logout</button>
-                <Footer />
+                <Form />
             </div>
         </>
     )
