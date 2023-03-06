@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react';
 import { useDispatch } from 'react-redux';
 import { Route, Routes, Navigate, useLocation } from 'react-router-dom';
+import { useAuth0 } from '@auth0/auth0-react';
 
 import { selectPage } from './features/state/common/navBarSlice';
 import AboutPage from './features/components/1-AboutPage/AboutPage';
@@ -16,7 +17,6 @@ function App() {
   const dispatch = useDispatch();
   const location = useLocation();
   useEffect(() => {dispatch(selectPage(location.pathname));});
-  
 
   return (
     <Routes>
