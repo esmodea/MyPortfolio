@@ -5,8 +5,7 @@ import { useAuth0 } from '@auth0/auth0-react';
 import './abilities.css';
 
 const Login = () => {
-    const { loginWithRedirect, isAuthenticated } = useAuth0();
-    console.log(isAuthenticated)
+    const { loginWithRedirect } = useAuth0();
     const [nasaPhoto, setNasaPhoto] = useState();
     const [hiddenbg, setHiddenbg] = useState({opacity: 0});
     axios('https://api.nasa.gov/planetary/apod?api_key=EUurLVLKFArmlrR2GxDniAXprjgAfZ312dketdTV')
