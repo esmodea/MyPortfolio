@@ -13,8 +13,12 @@ const userFormState = createSlice({
     name: 'userForm',
     initialState,
     reducers: {
-        
+        alterInput: (state, {payload}) => {
+            state[payload.key] = payload.info;
+        }
     }
 })
+
+export const { alterInput } = userFormState.actions;
 
 export default userFormState.reducer;
