@@ -25,7 +25,7 @@ app.post('/users', (req, res) => {
             });
             con.release()
         })
-        
+        pool.removeAllListeners();
     } else {
         console.log('Missing a parameter');
     };
@@ -41,6 +41,7 @@ app.get('/users', (req, res) => {
         });
         con.release();
     });
+    pool.removeAllListeners();
 });
 
 app.get('/resume', (req, res) => {
@@ -55,6 +56,7 @@ app.get('/resume', (req, res) => {
         });
         con.release();
     })
+    pool.removeAllListeners();
 });
 
 app.get('/github', (req, res) => {
@@ -69,6 +71,7 @@ app.get('/github', (req, res) => {
         });
         con.release();
     })
+    pool.removeAllListeners();
 });
 
 app.get('/tools', (req, res) => {
@@ -83,6 +86,7 @@ app.get('/tools', (req, res) => {
         });
         con.release();
     })
+    pool.removeAllListeners();
 })
 
 app.delete('/users', (req, res) => {
@@ -96,6 +100,7 @@ app.delete('/users', (req, res) => {
             });
             con.release();
         });
+        pool.removeAllListeners();
     } else {
         console.log('Missing id')
     }
