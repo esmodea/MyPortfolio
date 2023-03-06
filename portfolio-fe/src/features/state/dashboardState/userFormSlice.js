@@ -2,10 +2,10 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
     username: '',
-    isRecruiter: false,
-    isInterested: false,
     email: '',
     companyName: '',
+    isRecruiter: false,
+    isInterestedIn: [],
     about: ''
 }
 
@@ -14,7 +14,8 @@ const userFormState = createSlice({
     initialState,
     reducers: {
         alterInput: (state, {payload}) => {
-            state[payload.key] = payload.info;
+            if(payload.key !== 'isInterestedIn')state[payload.key] = payload.info;
+            if(payload.key === 'isInterestedIn')state[payload.key] = [...payload.info]
         }
     }
 })

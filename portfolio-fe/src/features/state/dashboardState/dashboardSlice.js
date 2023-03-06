@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    page: 'intakeForm'
+    page: 'info-form'
 }
 
 const dashboardPageState = createSlice({

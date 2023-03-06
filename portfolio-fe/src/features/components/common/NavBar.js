@@ -6,6 +6,7 @@ import { useAuth0 } from '@auth0/auth0-react';
 import Explanation from '../2-AbilitiesPage/Explanation';
 import { Menu } from 'antd';
 import { FormOutlined, GithubOutlined, BookOutlined, SlidersOutlined } from '@ant-design/icons';
+import { choosePage } from '../../state/dashboardState/dashboardSlice';
 import logo from '../../assets/logo.svg';
 import altlogo from '../../assets/Logo.png';
 import './common.css';
@@ -22,6 +23,10 @@ const NavBar = () => {
 
     const toggleMenu = () => {
         setMenuState(!menuState);
+    }
+
+    const handleMenuSelection = (e) => {
+        dispatch(choosePage(e.key));
     }
 
     const menuItems = [
@@ -68,7 +73,7 @@ const NavBar = () => {
                 </div>
             </div>
             {state.selectedPage === '/abilities' && isAuthenticated ? <Explanation menu={toggleMenu} /> : ''}
-            {state.selectedPage === '/abilities' && isAuthenticated ? <Menu className='abilities-menu' inlineCollapsed={menuState} items={menuItems} /> : ''}
+            {state.selectedPage === '/abilities' && isAuthenticated ? <Menu onClick={handleMenuSelection} defaultSelectedKeys={'info-form'} className='abilities-menu' inlineCollapsed={menuState} items={menuItems} /> : ''}
         </>
     )
 }
