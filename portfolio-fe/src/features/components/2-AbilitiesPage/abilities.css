@@ -143,4 +143,38 @@
     right: auto;
     border-radius: 2rem;
     box-shadow: inset 1px 1px 10px #011526;
+    padding: 0px;
+}
+
+.user-form{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 100%;
+    justify-content: space-around;
+    flex: 1 0 auto;
+}
+
+
+
+.user-form-container{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex: 1 0 auto;
+}
+
+:where(.css-dev-only-do-not-override-diro6f).ant-form-item .ant-form-item-label > label{
+    color: #A3D4FD;
+    font-family: 'Play', monospace;
+    font-size: x-large;
+}
+
+.explanation-para{
+    width: 50%;
+    padding: 4rem;
+    font-size: 2rem;
+    font-family: 'Play', monospace;
+    color: #A3D4FD;
 }

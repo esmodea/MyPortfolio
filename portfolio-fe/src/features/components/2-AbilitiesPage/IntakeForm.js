@@ -12,8 +12,11 @@ const IntakeForm = () => {
         form.setFieldValue({job: value})
     }
     return(
-        <Form 
+        <div className="user-form-container">
+        <Form
+            className="user-form" 
             name="intake-form"
+            size="large"
             labelCol={{ span: 8 }}
             wrapperCol={{ span: 16 }}
             style={{ maxWidth: 700 }}
@@ -78,6 +81,8 @@ const IntakeForm = () => {
             </Form.Item>
             
         </Form>
+        <p className="explanation-para"> If you're a first time user please input your information! This page is the dashboard so you can edit the rest of the site. It uses an AWS RDS instance that is queried through my custom API so that the rest of the site can be customized. If you want to change a text-box you can! Want to change an image... You also can! {`(provided you have a link to the image)`}. </p>
+        </div>
     )
 }
 
