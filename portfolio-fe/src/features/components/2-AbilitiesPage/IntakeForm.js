@@ -79,7 +79,7 @@ const IntakeForm = () => {
             >
                 <TextArea rows={4} />
             </Form.Item>
-            
+            <button className="logout-button" style={{width: '5rem', alignSelf: 'flex-end', marginTop: '-38px'}}>Save</button>
         </Form>
         <p className="explanation-para"> If you're a first time user please input your information! This page is the dashboard so you can edit the rest of the site. It uses an AWS RDS instance that is queried through my custom API so that the rest of the site can be customized. If you want to change a text-box you can! Want to change an image... You also can! {`(provided you have a link to the image)`}. </p>
         </div>
