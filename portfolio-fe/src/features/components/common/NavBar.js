@@ -5,7 +5,7 @@ import { selectPage } from '../../state/common/navBarSlice';
 import { useAuth0 } from '@auth0/auth0-react';
 import Explanation from '../2-AbilitiesPage/Explanation';
 import { Menu } from 'antd';
-import { FormOutlined, GithubOutlined, BookOutlined, SlidersOutlined } from '@ant-design/icons';
+import { FormOutlined, InfoCircleOutlined } from '@ant-design/icons';
 import { choosePage } from '../../state/dashboardState/dashboardSlice';
 import logo from '../../assets/logo.svg';
 import altlogo from '../../assets/Logo.png';
@@ -31,19 +31,9 @@ const NavBar = () => {
 
     const menuItems = [
         {
-            label: 'Resume',
-            key: 'resume-form',
-            icon: <BookOutlined />,
-        },
-        {
-            label: 'Github',
-            key: 'github-form',
-            icon: <GithubOutlined />,
-        },
-        {
-            label: 'Tools',
-            key: 'tools-form',
-            icon: <SlidersOutlined />,
+            label: 'About the site',
+            key: 'info-dump',
+            icon: <InfoCircleOutlined />,
         },
         {
             label: 'Personal',

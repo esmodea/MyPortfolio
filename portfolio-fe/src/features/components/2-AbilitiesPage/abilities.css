@@ -96,6 +96,15 @@
     transition: .1s;
 }
 
+.delete-button.menu-button{
+    background-color: #FB90B7;
+    border-color: #F5085F;
+}
+
+.delete-button.menu-button:hover{
+    background-color: #D90754;
+}
+
 .logout-button:hover, .menu-button:hover{
     background-color: #034873;
     color: #A3D4FD;
@@ -177,4 +186,22 @@
     font-size: 2rem;
     font-family: 'Play', monospace;
     color: #A3D4FD;
+}
+
+.suggestion-para{
+    width: 50%;
+    padding: 4rem;
+    font-size: 1rem;
+    font-family: 'Play', monospace;
+    color: #A3D4FD;
+    justify-self: flex-start;
+    align-self: flex-start;
+}
+
+.winvisible:where(.css-dev-only-do-not-override-diro6f).ant-form-item .ant-form-item-label > label{
+    color: #034873;
+}
+
+#intake-form{
+    flex-wrap: nowrap;
 }

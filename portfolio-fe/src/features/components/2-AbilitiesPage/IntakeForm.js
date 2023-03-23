@@ -22,6 +22,13 @@ const IntakeForm = () => {
             style={{ maxWidth: 700 }}
             autoComplete="off"
         >
+            <Form.Item 
+                label="Please input your information!" 
+                name="suggestion"
+                labelCol={{ span: 24 }}
+                style={{marginLeft: '14.5rem', marginTop: '1rem'}}
+            >
+            </Form.Item>
             <Form.Item
                 label="Username"
                 name="username"
@@ -79,9 +86,18 @@ const IntakeForm = () => {
             >
                 <TextArea rows={4} />
             </Form.Item>
-            <button className="logout-button" style={{width: '5rem', alignSelf: 'flex-end', marginTop: '-38px'}}>Save</button>
+            <Form.Item
+                label=' '
+                className="winvisible"
+            >
+            <div style={{display: 'flex', width: '100%'}}>
+            <button className="menu-button delete-button" style={{justifySelf: 'flex-start', marginRight: 'auto', fontWeight: 'bolder'}}>DELETE</button>
+            <button className="logout-button" style={{justifySelf: 'flex-end', marginLeft: 'auto'}}>Save</button>
+
+            </div>
+            </Form.Item>
         </Form>
-        <p className="explanation-para"> If you're a first time user please input your information! This page is the dashboard so you can edit the rest of the site. It uses an AWS RDS instance that is queried through my custom API so that the rest of the site can be customized. If you want to change a text-box you can! Want to change an image... You also can! {`(provided you have a link to the image)`}. </p>
+        <p className="explanation-para">Your info will only be used for the purposes of my job search, if you wish to remove your info including your Auth0 login please do so by hitting the delete key in the bottom left corner. <br></br> <br/> If you wish to learn more about how I've built this site then please click the information icon in the top right beside the logout button.</p>
         </div>
     )
 }
