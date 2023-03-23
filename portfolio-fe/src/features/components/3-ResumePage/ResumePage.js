@@ -6,7 +6,8 @@ import Footer from '../common/Footer';
 import Overall from './Overall';
 import Projects from './Projects';
 import { updateCacheResume, pushCacheResume, pushContentCacheResume, pushTextCacheResume } from '../../state/common/cacheSlice';
-import './resume.css'
+import './resume.css';
+import '../common/common.css';
 
 const ResumePage = () => {
     const state = useSelector(state => state.resume);
@@ -120,7 +121,7 @@ const ResumePage = () => {
                     <Overall />
                     {console.log(display)}
                     {resumeFilter().map(({title, content}) => {
-                        return <Projects title={title} content={content} />
+                        if(title && content)return <Projects title={title} content={content} />
                     })}
                 </div>
                 <Footer />

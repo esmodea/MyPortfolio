@@ -22,14 +22,14 @@ const ToolsPage = () => {
                     id: item.typeID,
                     type: item.type
                 };
-                // console.log('newObj', newObj)
+                console.log('newObj', newObj)
                 dispatch(pushCacheTools(newObj)); 
             }
             // console.log(contentCache[item.id])
             if(!contentCache[item.id]){
                 const newObj = {
                     id: item.id,
-                    parentID: item.typeID,
+                    parentID: item.typeID - 1,
                     content: {
                         text: item.text,
                         icon: item.icon
@@ -47,39 +47,34 @@ const ToolsPage = () => {
         let content = [...contentCache];
         final.shift();
         content.shift();
-        console.log(cache, contentCache)
+        // console.log(cache, contentCache)
         for(let i = 0; i < content.length; i++){
-            // console.log(content[i], content, final[content[i].parentID - 1]);
-            console.log(final)
-            if(!final[content[i].parentID - 1].content){
-                final[content[i].parentID - 1] = {
-                    type: final[content[i].parentID - 1].type,
+            // console.log(final, content[i], content, final[content[i].parentID - 1]);
+            // console.log(final, content[i])
+            if(!final[content[i].parentID].content){
+                final[content[i].parentID] = {
+                    type: final[content[i].parentID].type,
                     content: [{
                         text: content[i].content.text,
                         icon: content[i].content.icon
                     }]
                 }
             } else {
-                console.log(content[i])
-                final[content[i].parentID - 1].content.push({
+                // console.log(content[i])
+                final[content[i].parentID].content.push({
                     text: content[i].content.text,
                     icon: content[i].content.icon
                 })
             }
         }
-        console.log(final)
+        // console.log(final)
         return final;
     } 
 
 
 
     useEffect(() => {
-        if(state.firstLoad){
-            // updateCache({
-            //     cache: [],
-            //     contentCache: []
-            // })
-        }
+        populateCache(state.data);
     })
 
     useEffect(() => {
@@ -87,7 +82,6 @@ const ToolsPage = () => {
     }, [dispatch])
 
     useEffect(() => {
-        populateCache(state.data);
         setDisplay(toolsFilter());
     }, [state.data])
 
