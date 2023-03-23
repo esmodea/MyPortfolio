@@ -1,6 +1,5 @@
 import React from "react";
 import IntakeForm from './IntakeForm';
-import ResumeForm from "./ResumeForm";
 import { useAuth0 } from '@auth0/auth0-react';
 
 const Form = ({Child}) => {
