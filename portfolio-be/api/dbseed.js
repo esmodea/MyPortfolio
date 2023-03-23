@@ -2,8 +2,6 @@ const mysql = require('mysql');
 require('dotenv/config')
 
 const [host, password] = [process.env.DB_ENDPOINT, process.env.DB_PASSWORD];
-console.log(host, password)
-console.log(process.env)
 
 const pool = mysql.createPool({
     connectionLimit: 10,
@@ -40,5 +38,8 @@ pool.getConnection((err, con) => {
     });
     con.query('CREATE TABLE IF NOT EXISTS toolsData(id int NOT NULL AUTO_INCREMENT, typeID int NOT NULL, text varchar(5000), icon varchar(300), PRIMARY KEY(id), FOREIGN KEY(typeID) REFERENCES toolsTypes(id))', function(error, result, fields) {
         console.log(result);
+    });
+    con.query('CREATE TABLE IF NOT EXISTS myJobTitles(id int NOT NULL AUTO_INCREMENT, title carchar(20), PRIMARY KEY(id))', function(error, result, fields) {
+        console.log(error, result);
     });
 })
