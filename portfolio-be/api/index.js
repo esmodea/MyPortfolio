@@ -12,6 +12,22 @@ const pool = mysql.createPool({
     password: password
 });
 
+
+app.get('/users', (req, res) => {
+    if(req.query.id) {
+        pool.getConnection((err, con) => {
+            con.connect(function(err) {
+                con.query(`SELECT * FROM main.users WHERE id = ${req.query.id}`, function(err, result, fields) {
+                    if (err) res.send(err);
+                    if (result) res.send(result);
+                });
+            });
+            con.release();
+        });
+        pool.removeAllListeners();
+    }
+});
+
 app.post('/users', (req, res) => {
     if ( req.query.username && req.query.email) {
         console.log('Request recieved');
@@ -59,19 +75,6 @@ app.get('/users-email', (req, res) => {
         })
     }
 })
-
-app.get('/users', (req, res) => {
-    pool.getConnection((err, con) => {
-        con.connect(function(err) {
-            con.query(`SELECT * FROM main.users`, function(err, result, fields) {
-                if (err) res.send(err);
-                if (result) res.send(result);
-            });
-        });
-        con.release();
-    });
-    pool.removeAllListeners();
-});
 
 app.get('/resume', (req, res) => {
     res.header('Access-Control-Allow-Origin', 'http://localhost:3000')
