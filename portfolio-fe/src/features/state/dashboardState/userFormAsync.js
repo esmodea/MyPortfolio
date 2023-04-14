@@ -8,20 +8,16 @@ const initialState = {
     error: ''
 };
 
-export const fetchUser = createAsyncThunk(
-    'userAsyncSlice/fetchUser', async (_, thunkAPI) => {
-        try{
-            const response = await axios.get('http://localhost:8000/resume')
+export const getUserById = createAsyncThunk(
+    'userAsyncSlice/fetchUser', async (userId, thunkAPI) => {
+        return await axios.get(`http://localhost:8000/user?id=${userId}`)
                 .then((res) => {
+                    console.log(res)
                     return res.data;
                 })
                 .catch(err => {
-                    throw err
+                    thunkAPI.rejectWithValue({error: err.message})
                 })
-            return await response;
-        } catch (err) {
-            return thunkAPI.rejectWithValue({error: err.message})
-        }
     }
 )
 
@@ -30,7 +26,7 @@ const userAsyncSlice = createSlice({
     initialState,
     reducers:{},
     extraReducers: (builder) => {
-        builder.addCase(fetchUser.pending, (state) => {
+        builder.addCase(getUserById.pending, (state) => {
             return(
                 {
                     ...state,
@@ -39,7 +35,7 @@ const userAsyncSlice = createSlice({
                 }
             )
         })
-        builder.addCase(fetchUser.fulfilled, (state, action) => {
+        builder.addCase(getUserById.fulfilled, (state, action) => {
             return(
                 {
                     ...state,
@@ -49,11 +45,11 @@ const userAsyncSlice = createSlice({
                 }
             )
         })
-        builder.addCase(fetchUser.rejected, (state, action) => {
+        builder.addCase(getUserById.rejected, (state, action) => {
             return(
                 {
                     ...state,
-                    error: action.error,
+                    error: action.payload.error,
                     firstLoad: false
                 }
             )
@@ -63,5 +59,5 @@ const userAsyncSlice = createSlice({
 
 
 
-export const { loadResume } = resumeSlice.actions;
-export default resumeSlice.reducer;
+export const { fetchUser } = userAsyncSlice.actions;
+export default userAsyncSlice.reducer;

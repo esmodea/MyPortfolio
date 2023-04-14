@@ -1,12 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    username: 'esmodea',
-    email: 'esmodearburk@gmail.com',
-    companyName: 'me',
-    isRecruiter: true,
-    isInterestedIn: 2,
-    about: 'lol this is filler'
+    username: '',
+    email: '',
+    companyName: '',
+    isRecruiter: false,
+    isInterestedIn: 0,
+    about: ''
 }
 
 const userFormState = createSlice({
@@ -15,10 +15,20 @@ const userFormState = createSlice({
     reducers: {
         alterInput: (state, {payload}) => {
             state[payload.key] = payload.info;
+        },
+        updateUser: (state, {payload}) => {
+            return {
+                username: payload.username,
+                email: payload.email,
+                companyName: payload.company,
+                isRecruiter: payload.isRecruiter,
+                recruitingFor: payload.recruitingFor,
+                about: payload.about,
+            }
         }
     }
 })
 
-export const { alterInput } = userFormState.actions;
+export const { alterInput, updateUser } = userFormState.actions;
 
 export default userFormState.reducer;

@@ -6,6 +6,7 @@ import toolsSlice from './toolsState/toolsSlice';
 import cacheSlice from './common/cacheSlice';
 import userSlice from './common/userSlice';
 import dashboardState from './dashboardState';
+import userFormAsync from './dashboardState/userFormAsync';
 
 export const store = configureStore({
     reducer: {
@@ -17,5 +18,6 @@ export const store = configureStore({
         user: userSlice,
         dashboardPage: dashboardState.dashboardSlice,
         userForm: dashboardState.userFormSlice,
+        userFormAsync: userFormAsync,
     }
 })
