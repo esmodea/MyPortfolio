@@ -253,13 +253,12 @@
 .dropdown-toggle{
     align-self: flex-start;
     display: flex;
-    justify-content: center;
     align-items: center;
 }
 
 .dropdown-toggle > p{
     padding: 0;
-    margin: 0 0 0 auto;
+    margin: 0 0 0 0;
 }
 
 .dropdown-toggle > span{
