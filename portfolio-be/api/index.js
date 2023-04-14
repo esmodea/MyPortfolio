@@ -13,53 +13,21 @@ const pool = mysql.createPool({
 });
 
 
-app.get('/users', (req, res) => {
+app.get('/user', (req, res) => {
+    res.header('Access-Control-Allow-Origin', 'http://localhost:3000')
     if(req.query.id) {
         pool.getConnection((err, con) => {
             con.connect(function(err) {
-                con.query(`SELECT * FROM main.users WHERE id = ${req.query.id}`, function(err, result, fields) {
+                con.query(`SELECT username, email, company, CONVERT(isRecruiter using utf8) as isRecruiter, recruitingFor, about FROM main.users WHERE id = ${req.query.id}`, function(err, result, fields) {
                     if (err) res.send(err);
                     if (result) res.send(result);
                 });
-            });
-            con.release();
-        });
-        pool.removeAllListeners();
-    }
-});
-
-app.post('/users', (req, res) => {
-    if ( req.query.username && req.query.email) {
-        console.log('Request recieved');
-        pool.getConnection((err, con) => {
-            con.connect((err)=> {
-                con.query(`INSERT INTO main.users (username, email) VALUES ('${req.query.username}', '${req.query.email}')`, (err, result, fields) => {
-                    if (err) res.send(err);
-                    if (result) res.send({username: req.query.username, email: req.query.email, age: req.query.age});
-                    if (fields) console.log(fields);
-                });
-            });
-            con.release()
-        })
-        pool.removeAllListeners();
-    } else {
-        console.log('Missing a parameter');
-    };
-});
-
-app.put('/users', (req, res) => {
-    if ( req.query.id && req.query.username && req.query.email && req.query.company && req.query.isRecruiter && req.query.recruitingFor && req.query.about ){
-        pool.getConnection((err, con) => {
-            con.connect((err) => {
-                con.query(`UPDATE main.users SET username = ${req.query.username}, email = ${req.query.email}, company = ${req.query.company}, isRecruiter = ${req.query.isRecruiter}, recruitingFor = ${req.query.recruitingFor}, about = ${req.query.about} WHERE id = ${req.query.id}`, (err, result, fields) => {
-                    if (err) res.send(err);
-                    if (result) res.send({username: req.query.username, email: req.query.email, company: req.query.company, isRecruiter: req.query.isRecruiter, recruitingFor: req.query.recruitingFor, about: req.query.about});
-                    if (fields) console.log(fields);
-                })
             })
+            con.release();  
         })
+        pool.removeAllListeners();
     }
-})
+});
 
 app.get('/users-email', (req, res) => {
     res.header('Access-Control-Allow-Origin', 'http://localhost:3000')
@@ -72,7 +40,9 @@ app.get('/users-email', (req, res) => {
                     if (fields) console.log(fields);
                 })
             })
+            con.release();  
         })
+        pool.removeAllListeners();
     }
 })
 
@@ -121,7 +91,7 @@ app.get('/tools', (req, res) => {
     pool.removeAllListeners();
 })
 
-app.delete('/users', (req, res) => {
+app.delete('/delete-user', (req, res) => {
     res.header('Access-Control-Allow-Origin', 'http://localhost:3000')
     if(req.query.id){
         pool.getConnection((err, con) => {
