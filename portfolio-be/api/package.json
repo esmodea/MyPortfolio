@@ -10,6 +10,7 @@
   "repository": "https://github.com/bloominstituteoftechnology/node-db1-guided.git",
   "license": "MIT",
   "dependencies": {
+    "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.17.3",
     "knex": "^2.0.0",

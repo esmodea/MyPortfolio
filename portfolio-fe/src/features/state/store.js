@@ -7,6 +7,7 @@ import cacheSlice from './common/cacheSlice';
 import userSlice from './common/userSlice';
 import dashboardState from './dashboardState';
 import userFormAsync from './dashboardState/userFormAsync';
+import userFormDeleteAsync from './dashboardState/userFormDeleteAsync';
 
 export const store = configureStore({
     reducer: {
@@ -19,5 +20,6 @@ export const store = configureStore({
         dashboardPage: dashboardState.dashboardSlice,
         userForm: dashboardState.userFormSlice,
         userFormAsync: userFormAsync,
+        userFormDeleteAsync: userFormDeleteAsync,
     }
 })

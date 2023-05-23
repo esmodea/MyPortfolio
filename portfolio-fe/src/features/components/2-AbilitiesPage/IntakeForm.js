@@ -1,14 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from 'react-redux';
 import { Form, Input, Select, setFieldValue } from "antd";
+import { useAuth0 } from "@auth0/auth0-react";
 import { alterInput, updateUser } from "../../state/dashboardState/userFormSlice";
 import { getUserById } from "../../state/dashboardState/userFormAsync";
+import { deleteUserById } from "../../state/dashboardState/userFormDeleteAsync";
 import CustomSelect from "./CustomSelect";
 import axios from "axios";
 
 const { TextArea } = Input;
 
 const IntakeForm = ({user}) => {
+    const { logout } = useAuth0();
     const [ isRecruiter, setIsRecruiter ] = useState(false);
     const [ userId, setUserId ] = useState()
     const state = useSelector((state) => state.userForm);
@@ -17,6 +20,18 @@ const IntakeForm = ({user}) => {
     const handleInputChange = (key, value) => {
         dispatch(alterInput({key: key, info: value}))
     }
+
+    const onClickSave = (e) => {
+        e.preventDefault()
+        axios.post()
+    } 
+
+    const onClickDelete = (e) => {
+        e.preventDefault()
+        dispatch(deleteUserById(userId))
+        // logout()
+    }
+
     useEffect(() => {
         axios.get(`http://localhost:8000/users-email?email='${user.email}'`)
                 .then(res => {
@@ -110,7 +125,7 @@ const IntakeForm = ({user}) => {
                     </li>
                 </ul>
                 <div style={{display: 'flex', width: '100%'}}>
-                    <button className="menu-button delete-button" style={{justifySelf: 'flex-start', marginRight: 'auto', fontWeight: 'bolder'}}>DELETE</button>
+                    <button className="menu-button delete-button" onClick={onClickDelete} style={{justifySelf: 'flex-start', marginRight: 'auto', fontWeight: 'bolder'}}>DELETE</button>
                     <button className="logout-button" style={{justifySelf: 'flex-end', marginLeft: 'auto'}}>Save</button>
                 </div>
             </form>

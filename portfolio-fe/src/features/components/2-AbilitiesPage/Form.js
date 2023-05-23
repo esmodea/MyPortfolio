@@ -7,6 +7,7 @@ const Form = ({Child}) => {
     return(
         <div className="abilities-page">
             {Child === 'info-form'? <IntakeForm user={user} /> : ''}
+            {Child === 'info-dump'? () => {return <div>Hello world</div>} : ''}
         </div>
     )
 }

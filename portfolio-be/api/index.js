@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors')
 const mysql = require('mysql');
 require('dotenv/config');
 const app = express();
@@ -12,9 +13,9 @@ const pool = mysql.createPool({
     password: password
 });
 
+app.use(cors({ origin: 'http://localhost:3000', credentials: true }))
 
 app.get('/user', (req, res) => {
-    res.header('Access-Control-Allow-Origin', 'http://localhost:3000')
     if(req.query.id) {
         pool.getConnection((err, con) => {
             con.connect(function(err) {
@@ -30,7 +31,6 @@ app.get('/user', (req, res) => {
 });
 
 app.get('/users-email', (req, res) => {
-    res.header('Access-Control-Allow-Origin', 'http://localhost:3000')
     if ( req.query.email ) {
         pool.getConnection((err, con) => {
             con.connect((err) => {
@@ -47,7 +47,6 @@ app.get('/users-email', (req, res) => {
 })
 
 app.get('/resume', (req, res) => {
-    res.header('Access-Control-Allow-Origin', 'http://localhost:3000')
     pool.getConnection((err, con) => {
         con.connect((err) => {
             con.query(`SELECT id, Content.contentID, Text.textID, title, smallTitle, github, website, text FROM main.resumeData as Data LEFT JOIN main.resumeContent as Content ON Data.id = Content.titleID LEFT JOIN main.resumeText as Text ON Content.contentID = Text.contentID ORDER BY Data.id, Content.contentID, Text.textID ASC`, (err, result, fields) => {
@@ -62,7 +61,6 @@ app.get('/resume', (req, res) => {
 });
 
 app.get('/github', (req, res) => {
-    res.header('Access-Control-Allow-Origin', 'http://localhost:3000')
     pool.getConnection((err, con) => {
         con.connect((err) => {
             con.query(`SELECT icon, text, href FROM main.gitData as Data`, (err, result, fields) => {
@@ -77,7 +75,6 @@ app.get('/github', (req, res) => {
 });
 
 app.get('/tools', (req, res) => {
-    res.header('Access-Control-Allow-Origin', 'http://localhost:3000')
     pool.getConnection((err, con) => {
         con.connect((err) => {
             con.query(`SELECT Data.id, Types.id as typeID, type, text, icon FROM main.toolsTypes as Types LEFT JOIN main.toolsData as Data ON Types.id = Data.typeID`, (err, result, fields) => {
@@ -92,8 +89,6 @@ app.get('/tools', (req, res) => {
 })
 
 app.delete('/delete-user', (req, res) => {
-    res.header('Access-Control-Allow-Origin', 'http://localhost:3000')
-    if(req.query.id){
         pool.getConnection((err, con) => {
             con.connect((err) => {
                 con.query(`DELETE FROM main.users WHERE id = ${req.query.id}`, (err, result)=> {
@@ -104,9 +99,10 @@ app.delete('/delete-user', (req, res) => {
             con.release();
         });
         pool.removeAllListeners();
-    } else {
-        console.log('Missing id')
-    }
+})
+
+app.post('/add-user', (req, res) => {
+    
 })
 
 app.listen(8000, () => {console.log('Running on port 8000!')})
