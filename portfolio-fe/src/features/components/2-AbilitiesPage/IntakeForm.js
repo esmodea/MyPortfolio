@@ -29,7 +29,7 @@ const IntakeForm = ({user}) => {
     const onClickDelete = (e) => {
         e.preventDefault()
         dispatch(deleteUserById(userId))
-        // logout()
+        logout()
     }
 
     useEffect(() => {
