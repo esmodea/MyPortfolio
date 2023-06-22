@@ -90,13 +90,19 @@ app.get('/tools', (req, res) => {
 
 app.delete('/delete-user', (req, res) => {
         pool.getConnection((err, con) => {
-            con.connect((err) => {
-                con.query(`DELETE FROM main.users WHERE id = ${req.query.id}`, (err, result)=> {
-                    if(err) res.send(err)
-                    if(result) res.send(result)
+            if(req.query.id){
+                con.connect((err) => {
+                    isInDatabase = false
+                    con.query(`GET FROM main.users WHERE id = ${req.query.id}`, (err, result)=> {
+                        if(result) isInDatabase = !!result
+                    })
+                    if(isInDatabase)con.query(`DELETE FROM main.users WHERE id = ${req.query.id}`, (err, result)=> {
+                        if(err) res.send(err)
+                        if(result) res.send(result)
+                    });
                 });
-            });
-            con.release();
+                con.release();
+            }
         });
         pool.removeAllListeners();
 })
