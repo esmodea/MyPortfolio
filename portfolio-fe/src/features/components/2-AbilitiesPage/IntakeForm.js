@@ -23,13 +23,13 @@ const IntakeForm = ({user}) => {
 
     const onClickSave = (e) => {
         e.preventDefault()
-        axios.post()
+        // axios.post()
     } 
 
     const onClickDelete = (e) => {
         e.preventDefault()
         dispatch(deleteUserById(userId))
-        logout()
+        setTimeout(logout(), 3000)
     }
 
     useEffect(() => {
@@ -126,7 +126,7 @@ const IntakeForm = ({user}) => {
                 </ul>
                 <div style={{display: 'flex', width: '100%'}}>
                     <button className="menu-button delete-button" onClick={onClickDelete} style={{justifySelf: 'flex-start', marginRight: 'auto', fontWeight: 'bolder'}}>DELETE</button>
-                    <button className="logout-button" style={{justifySelf: 'flex-end', marginLeft: 'auto'}}>Save</button>
+                    <button className="logout-button" onClick={onClickSave} style={{justifySelf: 'flex-end', marginLeft: 'auto'}}>Save</button>
                 </div>
             </form>
         <p className="explanation-para">Your info will only be used for the purposes of my networking and job search, if you wish to remove your info including your Auth0 login please do so by hitting the delete key in the bottom left corner. <br></br> <br/> If you wish to learn more about how I've built this site then please click the information icon in the top right beside the logout button.</p>
