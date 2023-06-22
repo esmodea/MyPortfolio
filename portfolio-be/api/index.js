@@ -34,7 +34,12 @@ app.get('/users-email', (req, res) => {
     if ( req.query.email ) {
         pool.getConnection((err, con) => {
             con.connect((err) => {
-                con.query(`SELECT id FROM main.users WHERE email = ${req.query.email}`, (err, result, fields) => {
+                let emailExists = false;
+                con.query(`GET FROM main.users WHERE email = ${req.query.email}`, (err, result, fields) => {
+                    if(err) res.send(err);
+                    if (result) emailExists = !!result;
+                })
+                if(emailExists)con.query(`SELECT id FROM main.users WHERE email = ${req.query.email}`, (err, result, fields) => {
                     if (err) res.send(err);
                     if (result) res.send({id: result[0].id});
                     if (fields) console.log(fields);
@@ -92,7 +97,7 @@ app.delete('/delete-user', (req, res) => {
         pool.getConnection((err, con) => {
             if(req.query.id){
                 con.connect((err) => {
-                    isInDatabase = false
+                    let isInDatabase = false;
                     con.query(`GET FROM main.users WHERE id = ${req.query.id}`, (err, result)=> {
                         if(result) isInDatabase = !!result
                     })
