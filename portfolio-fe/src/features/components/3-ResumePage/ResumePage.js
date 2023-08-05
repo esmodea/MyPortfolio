@@ -8,7 +8,7 @@ import Projects from './Projects';
 import { updateCacheResume, pushCacheResume, pushContentCacheResume, pushTextCacheResume } from '../../state/common/cacheSlice';
 import './resume.css';
 import '../common/common.css';
-import { Data } from './resumeData'
+import Data from './resumeData'
 
 const ResumePage = () => {
     const state = useSelector(state => state.resume);
@@ -121,7 +121,7 @@ const ResumePage = () => {
                 <div className='resume-container'>
                     <Overall />
                     {console.log(display)}
-                    {resumeFilter().map(({title, content}) => {
+                    {Data.map(({title, content}) => {
                         if(title && content)return <Projects title={title} content={content} />
                     })}
                 </div>
