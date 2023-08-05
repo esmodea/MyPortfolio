@@ -8,6 +8,7 @@ import Projects from './Projects';
 import { updateCacheResume, pushCacheResume, pushContentCacheResume, pushTextCacheResume } from '../../state/common/cacheSlice';
 import './resume.css';
 import '../common/common.css';
+import { Data } from './resumeData'
 
 const ResumePage = () => {
     const state = useSelector(state => state.resume);
