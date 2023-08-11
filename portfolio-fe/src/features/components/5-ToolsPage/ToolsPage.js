@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import NavBar from '../common/NavBar';
 import Foreground from './Foreground';
 import Background from './Background';
+import contents from './contents';
 import { fetchTools } from '../../state/toolsState/toolsSlice';
 import { pushCacheTools, pushContentCacheTools} from '../../state/common/cacheSlice';
 import './tools.css';
