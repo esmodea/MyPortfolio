@@ -90,13 +90,12 @@ const ToolsPage = () => {
         <>
             <div className='page-container' >
                 <NavBar/>
-                {display.map((item) => {
-                    console.log(item)
+                {contents.map((item) => {
                     isIndent = !isIndent;
                     if(isIndent){
-                        if(item.content)return <Background itemArr={item.content} />
+                        if(item)return <Background itemArr={item} />
                     } else {
-                        if(item.content)return <Foreground itemArr={item.content} />
+                        if(item)return <Foreground itemArr={item} />
                     }
                 })}
             </div>
