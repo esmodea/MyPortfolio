@@ -12,8 +12,8 @@ import git from '../../assets/ToolsIcons/git.png';
 import vsc from '../../assets/ToolsIcons/vsc.png';
 
 
-const contents = {
-    frontEnd: [
+const contents = [
+    [
         {
             text: 'React was hard at first but now it feels like typing English to me. I find it so easy to conceptualize web layouts through the component architecture of React that I oftentimes find myself finishing way faster than I expected to.',
             icon: react
@@ -31,7 +31,7 @@ const contents = {
             icon: axios
         },
     ],
-    backEnd: [
+    [
         {
             text: 'SQL is something I’ve not had to work in a whole lot, but I know the syntax, I know the industry standard for usage and I’ve even used it to build the API for the back-end of the comments section on the “What I can do” page.',
             icon: sql
@@ -53,7 +53,7 @@ const contents = {
             icon: vsc
         },
     ],
-    essentials: [
+    [
         {
             text: 'I have quite a few year’s experience with HTML, learned the basics in High School and still have a solid grasp. Even though most of the work I do now is in JSX, it’s still a great tool that I’m quite familiar with.',
             icon: html
@@ -67,6 +67,6 @@ const contents = {
             icon: js
         },
     ]
-}
+]
 
 export default contents;
