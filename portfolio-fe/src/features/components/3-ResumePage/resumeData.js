@@ -1,5 +1,30 @@
 const Data = [
     {
+        title: 'BloomTech Labs',
+        content: [
+            {
+                smallTitle: 'Family Promise of Spokane (Full Stack Developer) - React | Node | Redux Toolkit | AntDesign',
+                text: [
+                    'Collaborated in Agile development environment with product manager and provided feedback on pull requests using GitHub, Jira, and Slack',
+                    'Created and implemented a mock data source to replicate Node API using JavaScript so that team could build UI/UX components and the API simultaneously',
+                    'Designed and built the Resources page using AntDesign and React with iterative cards and display modals to facilitate easy resource management for stakeholders',
+                    'Programmed a custom filter button on the Resources page with search functionality to easily sort cards and access relevant data for each resource',
+                    'Redesigned redux store using Redux Toolkit to provide easier access and implementation of redux state across components and pages',
+                    'Produced slices of state for clients and users to supply data from Auth0 and backend so that case administrators can easily access a list of clients',
+                ],
+                github: 'https://github.com/esmodea/family-promise-case-mgmt-fe'
+            },
+            {
+                smallTitle: 'Coder Heroes',
+                text: [
+                    'Altered and designed layout of Admin Dashboard menu using Figma and AntDesign menus to ease admin user flow from page to page',
+                    'Designed data flow model for front end for documentation and ease of understanding user flow throughout the site so developers could more efficiently plan implementation of use cases',
+                ],
+                github: 'https://github.com/esmodea/coder-heroes-fe'
+            }
+        ]
+    },
+    {
         title: 'Bloomtech Projects',
         content: [
             {
