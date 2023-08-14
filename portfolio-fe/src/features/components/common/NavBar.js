@@ -50,8 +50,8 @@ const NavBar = () => {
                       className='main-logo'
                       data={logo ? logo : altlogo}
                       alt='Esmodea Burk'
-                      width={'288px'}
-                      height={'180px'}
+                      width={'350px'}
+                      height={'219px'}
                     />
                 </Link>
                 <div className='link-container'>

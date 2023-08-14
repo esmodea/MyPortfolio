@@ -2,6 +2,7 @@
     width: 80vw;
     display: flex;
     justify-content: space-between;
+    margin-top: -50px;
 }
 
 .welcome-article-bg{

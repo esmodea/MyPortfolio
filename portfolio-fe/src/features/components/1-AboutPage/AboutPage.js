@@ -11,7 +11,6 @@ const AboutPage = () => {
         <>
             <div className="page-container">
                 <NavBar />
-                <br />
                 <Welcome />
                 <CodeExperience /> 
                 <SelfDesc />
