@@ -41,7 +41,7 @@ const contents = [
             icon: express
         },
         {
-            text: 'NodeJs is like an old friend to me. I used to run Linux as my daily driver for my computer and I did so much through NodeJs during that time of my life. It’s the same reason I find it so easy to use the GitBash terminal. ',
+            text: 'NodeJs is like an old friend to me. I used to run Linux as my daily driver OS for my computer and I did so much through NodeJs during that time of my life. It’s the same reason I find it so easy to use the GitBash terminal. ',
             icon: node
         },
         {
