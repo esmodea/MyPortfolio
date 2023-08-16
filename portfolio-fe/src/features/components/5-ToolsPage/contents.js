@@ -50,7 +50,7 @@ const contents = [
         },
         {
             text: 'VSCode is my favorite coding software. It has such good integration with git and I even have my GitBash running through the VSC terminal. I highly recommend it to anyone who hasn’t used it (not that any experienced programmer hasn’t). The color coding helps so much and the customization and sheer volume of language plug-ins is a must.',
-            icon: vsc
+            icon: vsc   
         },
     ],
     [
