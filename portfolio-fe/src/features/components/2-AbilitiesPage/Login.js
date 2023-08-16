@@ -20,7 +20,7 @@ const Login = () => {
             <div className='page-container'>
                 <NavBar />
                 <div className='login-content'>
-                    <p className='info'>You are looking at the nasa Astronomy Picture of the Day</p>
+                    <p className='info'>{`You ${nasaPhoto ? 'are' : 'will be'} looking at the nasa Astronomy Picture of the Day`}</p>
                     <div className='login-window'>
                         <button className='login-button' onClick={() => {loginWithRedirect()}}>Login to continue</button>
                     </div>
