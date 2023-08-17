@@ -20,8 +20,8 @@ function App() {
 
   return (
     <Routes>
-      <Route exact path='/' element={<Navigate to='/about' />}/>
-      <Route path='/about' element={<AboutPage />}/>
+      {/* <Route exact path='/' element={<Navigate to='/about' />}/> */}
+      <Route path='/' element={<AboutPage />}/>
       <Route path={'/abilities'} element={<PrivateRoute><AbilitiesPage /></PrivateRoute>} />
       <Route path='/resume' element={<ResumePage />}/>
       <Route path='/github' element={<GitPage />}/>
