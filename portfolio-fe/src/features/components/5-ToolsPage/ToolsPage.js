@@ -89,7 +89,6 @@ const ToolsPage = () => {
     return(
         <>
             <div className='page-container' >
-                <NavBar/>
                 {contents.map((item) => {
                     isIndent = !isIndent;
                     if(isIndent){

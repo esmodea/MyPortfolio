@@ -16,11 +16,9 @@ root.render(
   <Router>
     <React.StrictMode>
       <Provider store={store}>
-        <Layout>
           <Auth0ProviderWithHistory>
             <App />
           </Auth0ProviderWithHistory>
-        </Layout>
       </Provider>
     </React.StrictMode>
   </Router>
