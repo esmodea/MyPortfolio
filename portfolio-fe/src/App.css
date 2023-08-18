@@ -9,4 +9,5 @@
     background-color: #66C2FB;
     transition: 0s;
     min-height: 100vh;
+    max-width: 98vw;
 }
