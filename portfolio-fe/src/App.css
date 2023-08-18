@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,600&family=Open+Sans:wght@300;400;500;600;700;800&family=Play:wght@400;700&family=Source+Code+Pro:wght@300;400&display=swap');
 
+* {
+    max-width: min(100%, 100vw); /* This is to keep Chrome from fucking the screen width with its dumb scrollbar nonsense */
+}
 
 .page-container{
     width: 100vw;
