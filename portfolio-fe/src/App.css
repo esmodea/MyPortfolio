@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,600&family=Open+Sans:wght@300;400;500;600;700;800&family=Play:wght@400;700&family=Source+Code+Pro:wght@300;400&display=swap');
 
+
 .page-container{
     width: 100vw;
     display: flex;
@@ -9,5 +10,55 @@
     background-color: #66C2FB;
     transition: 0s;
     min-height: 100vh;
-    max-width: 98vw;
+    max-width: 100%;
+}
+
+.nav{
+    max-width: 100%;
+    background-color: #66C2FB;
+    display: flex;
+    width: 100vw;
+    align-items: center;
+}
+
+.link-container{
+    flex: 1 1;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #046099;
+    height: fit-content;
+    padding: .5rem 3rem .5rem 3rem;
+    border-radius: 1.3rem 0rem 0rem 1.3rem;
+    box-shadow: 4px 4px 3px rgb(251 116 166 / 0.5);
+}
+
+.nav-link{
+    background-color: #046099;
+    font-size: xx-large;
+    text-decoration: none;
+    font-family: 'Josefin Sans', Tahoma, Verdana, sans-serif;
+    color: #A3D4FD;
+    border-radius: .7rem;
+    padding: .3rem 1.5rem 0rem 1.50rem;
+    flex: 0 0 auto;
+}
+
+.nav-link:hover{
+    background-color: #034873;
+    text-shadow: 4px 4px 5px rgb(0 0 0 / 0.5);
+    box-shadow: inset 4px 4px 5px rgb(0 0 0 / 0.5);
+}
+
+.nav-link.selected:hover{
+    background-color: #034873;
+    text-shadow: 4px 4px 5px rgb(0 0 0 / 0.5);
+    box-shadow: inset 4px 4px 5px rgb(0 0 0 / 0.5);
+    color: #A3D4FD;
+}
+
+.nav-link.selected{
+    background-color: #0690E6;
+    box-shadow: 4px 4px 5px rgb(0 0 0 / 0.5);
+    color: #011526;
 }
