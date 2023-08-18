@@ -10,7 +10,6 @@ const AbilitiesPage = () => {
     return(
         <>
             <div className='page-container abilities'>
-                <NavBar />
                 <Form Child={page} />
             </div>
         </>

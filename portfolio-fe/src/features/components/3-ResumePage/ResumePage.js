@@ -117,7 +117,6 @@ const ResumePage = () => {
     return(
         <>
             <div className='page-container' >
-                <NavBar/>
                 <div className='resume-container'>
                     <Overall />
                     {console.log(display)}

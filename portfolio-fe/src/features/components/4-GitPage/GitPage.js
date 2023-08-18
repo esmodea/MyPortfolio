@@ -20,7 +20,6 @@ const GitPage = () => {
     return(
         <>
             <div className='page-container' >
-                <NavBar/>
                 {contents ? contents.map((item) => {
                     isLeft = !isLeft;
                     if(isLeft){

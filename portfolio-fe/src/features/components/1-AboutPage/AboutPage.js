@@ -10,7 +10,6 @@ const AboutPage = () => {
     return (
         <>
             <div className="page-container">
-                <NavBar />
                 <Welcome />
                 <CodeExperience /> 
                 <SelfDesc />
