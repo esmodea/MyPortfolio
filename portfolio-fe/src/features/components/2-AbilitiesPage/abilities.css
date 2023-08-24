@@ -1,323 +1,325 @@
-.login-bg{
-    background-color: #034873;
-    object-fit: cover;
-    mask-image: url('../../assets/picture-transparency.png');
-    mask-size: 100vw;
-    height: 100vh;
-    width: 100vw;
-    margin-top: -100vh;
-    z-index: 0;
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    background-color: rgba(0, 0, 0, 0);
-    transition: 1s;
-}
-
-.login-content{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    width: 100vw;
-}
-
-.login-window{
-    background-color: #66C2FB;
-    position: fixed;
-    top: 45vh;
-    bottom: 50vh;
-    left: 45vw;
-    right: 50vw;
-    padding: 3rem;
-    border-radius: 2rem;
-    box-shadow: 1px 1px 5px #034873;
-    width: max-content;
-    height: max-content;
-}
-
-.login-button{
-    border-width: .2rem;
-    border-radius: 1rem;
-    padding: 1rem;
-    background-color: #034873;
-    color: #A3D4FD;
-    border-color: #034873;
-    font-family: 'Play', sans-serif;
-    border-style: solid;
-    transition: 1s;
-}
-
-.login-button:hover{
-    box-shadow: 1px 1px 5px #034873;
-    transition: 1s;
-}
-
-.info{
-    align-self: flex-end;
-    margin-right: 2rem;
-    background-color: #034873;
-    color: #A3D4FD;
-    border-radius: 1rem;
-    padding: .5rem 1rem;
-    font-family: 'Josefin sans', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 1.5em;
-}
-
-.nav, .footer, .page-container, .login-content{
-    z-index: 1;
-}
-
-.explanation{
-    background-color: #046099;
-    justify-self: flex-start;
-    align-self: flex-end;
-    display: flex;
-    border-bottom-left-radius: 1rem;
-    align-items: center;
-    margin-top: -4.1rem;
-    z-index: 2;
-}
-
-.explanation-title{
-    font-family: 'Josefin Sans', sans-serif;
-    color: #A3D4FD;
-    padding: 1rem;
-    margin: 0px 1rem;
-}
-
-.logout-button, .menu-button{
-    margin: .2rem 1rem;
-    padding: .5rem 1rem;
-    background-color: #66C2FB;
-    border: solid #A3D4FD;
-    border-radius: .5rem;   
-    font-family: 'Play', monospace;
-    transition: .1s;
-}
-
-.delete-button.menu-button{
-    background-color: #FB90B7;
-    border-color: #F5085F;
-}
-
-.delete-button.menu-button:hover{
-    background-color: #D90754;
-}
-
-.logout-button:hover, .menu-button:hover{
-    background-color: #034873;
-    color: #A3D4FD;
-    box-shadow: 1px 1px 5px #034873;
-    transition: .1s;
-}
-
-.abilities-menu{
-    align-self: flex-end;
-    background-color: #046099;
-    border-bottom-left-radius: .7rem;
-    color: #A3D4FD;
-    font-family: 'Josefin Sans', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
-
-.form-item > label, .form-title > label{
-    color: #A3D4FD;
-}
-
-.ant-menu-item.ant-menu-item-selected{
-    background-color: #011526;
-    color: #A3D4FD;
-}
-
-.ant-menu-inline-collapsed{
-    padding: 0rem;
-}
-
-.abilities{
-    height: 100vh;
-    width: 100vw;
-    position: absolute;
-    justify-content: space-between;
-}
-
-.abilities-page{
-    background-color: #034873;
-    width: 80vw;
-    height: 65vh;
-    position: absolute;
-    top: 15rem;
-    bottom: auto;
-    left: auto;
-    right: auto;
-    border-radius: 2rem;
-    box-shadow: inset 1px 1px 10px #011526;
-    padding: 0px;
-}
-
-.user-form{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    height: 100%;
-    justify-content: space-around;
-    width: 40%;
-    padding: 0;
-}
-
-.user-form-container{
-    height: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    flex: 1 0 auto;
-}
-
-.explanation-para{
-    width: 50%;
-    padding: 4rem;
-    font-size: 2rem;
-    font-family: 'Play', monospace;
-    color: #A3D4FD;
-}
-
-.suggestion-para{
-    width: 50%;
-    padding: 4rem;
-    font-size: 1rem;
-    font-family: 'Play', monospace;
-    color: #A3D4FD;
-    justify-self: flex-start;
-    align-self: flex-start;
-}
-
-#intake-form{
-    flex-wrap: nowrap;
-}
-
-.form-item.is-recruiter{
-    font-size: 1.68em;
-}
-
-.is-recruiter > label, .recruiting-for > label{
-    margin-right: 1.5rem;
-}
-
-.form-item{
-    font-size: 2em;
-}
-
-.form-items{
-    list-style: none;
-    font-family: 'Play', monospace;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 65%;
-}
-
-.form-item{
-    display: flex;
-    width: 100%;
-    justify-content: flex-end;
-}
-
-.form-item > input, .form-item > textarea{
-    width: 60%;
-    margin-left: 1.5rem;
-    border: none;
-    border-radius: .5em;
-    padding: 10px;
-    font-family: inherit;
-    font-size: .8rem;
-}
-
-.form-item > input:hover, .form-item > textarea:hover{
-    background-color: #66C2FB;
-    transition: .5s;
-}
-
-.form-item > .dropdown{
-    width: 60%;
-}
-
-.form-item > .dropdown > button{
-    width: 100%;
-    padding: 10px;
-    border: none;
-    border-radius: .5em;
-    background-color: white;
-    font-family: inherit;
-    font-size: .8rem;
-}
-
-.dropdown-toggle{
-    align-self: flex-start;
-    display: flex;
-    align-items: center;
-}
-
-.dropdown-toggle > p{
-    padding: 0;
-    margin: 0 0 0 0;
-}
-
-.dropdown-toggle > span{
-    margin-left: auto;
-    justify-self: flex-end;
-}
-
-.dropdown{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-}
-
-.dropdown-menu{
-    width: 100%;
-    margin-left: auto;
-    align-self: flex-end;
-    padding: 3px;
-    background-color: #A3D4FD;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-}
-
-.dropdown-item{
-    background-color: white;
-    padding: 3px;
-    margin: 0;
-    width: 100%;
-    font-size: inherit;
-    display: flex;
-    justify-content: space-around;
-    font-size: 1rem;
-    color: #011526;
-    background-color: #A3D4FD;
-}
-
-.dropdown-item:hover{
-    color: #011526;
-    background-color: #66C2FB;
-    transition: .5s;
-}
-
-.btn.btn-secondary.dropdown-toggle.flat-bottom{
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-    background-color: #A3D4FD;
-    transition: .25s;
-}
-
-.btn.btn-secondary.dropdown-toggle:hover{
-    background-color: #A3D4FD;
-    transition: .5s;
-}
-
-.not-displayed{
-    opacity: 0%;
-}
-
-.displayed{
-    opacity: 100%;
-    transition: .5s;
+@media screen and (min-width: 1525px) {
+    .login-bg{
+        background-color: #034873;
+        object-fit: cover;
+        mask-image: url('../../assets/picture-transparency.png');
+        mask-size: 100vw;
+        height: 100vh;
+        width: 100vw;
+        margin-top: -100vh;
+        z-index: 0;
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0);
+        transition: 1s;
+    }
+    
+    .login-content{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        width: 100vw;
+    }
+    
+    .login-window{
+        background-color: #66C2FB;
+        position: fixed;
+        top: 45vh;
+        bottom: 50vh;
+        left: 45vw;
+        right: 50vw;
+        padding: 3rem;
+        border-radius: 2rem;
+        box-shadow: 1px 1px 5px #034873;
+        width: max-content;
+        height: max-content;
+    }
+    
+    .login-button{
+        border-width: .2rem;
+        border-radius: 1rem;
+        padding: 1rem;
+        background-color: #034873;
+        color: #A3D4FD;
+        border-color: #034873;
+        font-family: 'Play', sans-serif;
+        border-style: solid;
+        transition: 1s;
+    }
+    
+    .login-button:hover{
+        box-shadow: 1px 1px 5px #034873;
+        transition: 1s;
+    }
+    
+    .info{
+        align-self: flex-end;
+        margin-right: 2rem;
+        background-color: #034873;
+        color: #A3D4FD;
+        border-radius: 1rem;
+        padding: .5rem 1rem;
+        font-family: 'Josefin sans', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 1.5em;
+    }
+    
+    .nav, .footer, .page-container, .login-content{
+        z-index: 1;
+    }
+    
+    .explanation{
+        background-color: #046099;
+        justify-self: flex-start;
+        align-self: flex-end;
+        display: flex;
+        border-bottom-left-radius: 1rem;
+        align-items: center;
+        margin-top: -4.1rem;
+        z-index: 2;
+    }
+    
+    .explanation-title{
+        font-family: 'Josefin Sans', sans-serif;
+        color: #A3D4FD;
+        padding: 1rem;
+        margin: 0px 1rem;
+    }
+    
+    .logout-button, .menu-button{
+        margin: .2rem 1rem;
+        padding: .5rem 1rem;
+        background-color: #66C2FB;
+        border: solid #A3D4FD;
+        border-radius: .5rem;   
+        font-family: 'Play', monospace;
+        transition: .1s;
+    }
+    
+    .delete-button.menu-button{
+        background-color: #FB90B7;
+        border-color: #F5085F;
+    }
+    
+    .delete-button.menu-button:hover{
+        background-color: #D90754;
+    }
+    
+    .logout-button:hover, .menu-button:hover{
+        background-color: #034873;
+        color: #A3D4FD;
+        box-shadow: 1px 1px 5px #034873;
+        transition: .1s;
+    }
+    
+    .abilities-menu{
+        align-self: flex-end;
+        background-color: #046099;
+        border-bottom-left-radius: .7rem;
+        color: #A3D4FD;
+        font-family: 'Josefin Sans', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+    
+    .form-item > label, .form-title > label{
+        color: #A3D4FD;
+    }
+    
+    .ant-menu-item.ant-menu-item-selected{
+        background-color: #011526;
+        color: #A3D4FD;
+    }
+    
+    .ant-menu-inline-collapsed{
+        padding: 0rem;
+    }
+    
+    .abilities{
+        height: 100vh;
+        width: 100vw;
+        position: absolute;
+        justify-content: space-between;
+    }
+    
+    .abilities-page{
+        background-color: #034873;
+        width: 80vw;
+        height: 65vh;
+        position: absolute;
+        top: 15rem;
+        bottom: auto;
+        left: auto;
+        right: auto;
+        border-radius: 2rem;
+        box-shadow: inset 1px 1px 10px #011526;
+        padding: 0px;
+    }
+    
+    .user-form{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        height: 100%;
+        justify-content: space-around;
+        width: 40%;
+        padding: 0;
+    }
+    
+    .user-form-container{
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        flex: 1 0 auto;
+    }
+    
+    .explanation-para{
+        width: 50%;
+        padding: 4rem;
+        font-size: 2rem;
+        font-family: 'Play', monospace;
+        color: #A3D4FD;
+    }
+    
+    .suggestion-para{
+        width: 50%;
+        padding: 4rem;
+        font-size: 1rem;
+        font-family: 'Play', monospace;
+        color: #A3D4FD;
+        justify-self: flex-start;
+        align-self: flex-start;
+    }
+    
+    #intake-form{
+        flex-wrap: nowrap;
+    }
+    
+    .form-item.is-recruiter{
+        font-size: 1.68em;
+    }
+    
+    .is-recruiter > label, .recruiting-for > label{
+        margin-right: 1.5rem;
+    }
+    
+    .form-item{
+        font-size: 2em;
+    }
+    
+    .form-items{
+        list-style: none;
+        font-family: 'Play', monospace;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 65%;
+    }
+    
+    .form-item{
+        display: flex;
+        width: 100%;
+        justify-content: flex-end;
+    }
+    
+    .form-item > input, .form-item > textarea{
+        width: 60%;
+        margin-left: 1.5rem;
+        border: none;
+        border-radius: .5em;
+        padding: 10px;
+        font-family: inherit;
+        font-size: .8rem;
+    }
+    
+    .form-item > input:hover, .form-item > textarea:hover{
+        background-color: #66C2FB;
+        transition: .5s;
+    }
+    
+    .form-item > .dropdown{
+        width: 60%;
+    }
+    
+    .form-item > .dropdown > button{
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: .5em;
+        background-color: white;
+        font-family: inherit;
+        font-size: .8rem;
+    }
+    
+    .dropdown-toggle{
+        align-self: flex-start;
+        display: flex;
+        align-items: center;
+    }
+    
+    .dropdown-toggle > p{
+        padding: 0;
+        margin: 0 0 0 0;
+    }
+    
+    .dropdown-toggle > span{
+        margin-left: auto;
+        justify-self: flex-end;
+    }
+    
+    .dropdown{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+    
+    .dropdown-menu{
+        width: 100%;
+        margin-left: auto;
+        align-self: flex-end;
+        padding: 3px;
+        background-color: #A3D4FD;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
+    
+    .dropdown-item{
+        background-color: white;
+        padding: 3px;
+        margin: 0;
+        width: 100%;
+        font-size: inherit;
+        display: flex;
+        justify-content: space-around;
+        font-size: 1rem;
+        color: #011526;
+        background-color: #A3D4FD;
+    }
+    
+    .dropdown-item:hover{
+        color: #011526;
+        background-color: #66C2FB;
+        transition: .5s;
+    }
+    
+    .btn.btn-secondary.dropdown-toggle.flat-bottom{
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        background-color: #A3D4FD;
+        transition: .25s;
+    }
+    
+    .btn.btn-secondary.dropdown-toggle:hover{
+        background-color: #A3D4FD;
+        transition: .5s;
+    }
+    
+    .not-displayed{
+        opacity: 0%;
+    }
+    
+    .displayed{
+        opacity: 100%;
+        transition: .5s;
+    }
 }
