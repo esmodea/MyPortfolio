@@ -3,6 +3,13 @@
 * {
     max-width: min(100%, 100vw); /* This is to keep Chrome from fucking the screen width with its dumb scrollbar nonsense */
 }
+
+.hidden, .hidden, .hidden, .hidden{
+    opacity: 0%;
+    width: 0px;
+    height: 0px;
+}
+
 @media screen and (min-width: 1525px) {
 .page-container{
     width: 100vw;
@@ -38,7 +45,7 @@
 
 .nav-link{
     background-color: #046099;
-    font-size: xx-large;
+    font-size: x-large;
     text-decoration: none;
     font-family: 'Josefin Sans', Tahoma, Verdana, sans-serif;
     color: #A3D4FD;
@@ -66,7 +73,10 @@
     color: #011526;
 }
 }
-@media screen and (max-width: 1285px){
+@media screen and (max-width: 1525px){
+*{
+    transition-duration: .5s;
+}
 .nav-link{
     background-color: #046099;
     font-size: large;
@@ -104,5 +114,16 @@
 .main-logo{
     margin: 0px;
     padding: 0px;
+    transition-duration: .5s;
+    opacity: 0;
 }
+}
+
+@keyframes stay {
+    0% {opacity: 100;}
+    1% {opacity: 99;}
+    100% {opacity: 100;}
+}
+@keyframes disappear {
+    0% {opacity: 0; width: 0px; height: 0px;}
 }
