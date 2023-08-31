@@ -33,15 +33,17 @@ const NavBar = () => {
     }
 
     useEffect(() => {
-        if(window.innerWidth < 1525) {
-            setDisplayMain({animationName: 'disappear', animationIterationCount: 1, animationDuration: '99999999999999999999999999s'})
-            setDisplayMobile({animationName: 'stay', animationIterationCount: 'infinite', animationDuration: '2s'})
+        window.onresize = () => {
+            if(window.innerWidth < 1525) {
+                setDisplayMain({animationName: 'disappear', animationIterationCount: 1, animationDuration: '99999999999999999999999999s'})
+                setDisplayMobile({animationName: 'stay', animationIterationCount: 'infinite', animationDuration: '2s'})
+            }
+            if(window.innerWidth >= 1525) {
+                setDisplayMobile({animationName: 'disappear', animationIterationCount: 1, animationDuration: '99999999999999999999999999s'})
+                setDisplayMain({animationName: 'stay', animationIterationCount: 'infinite', animationDuration: '2s'})
+            }
         }
-        if(window.innerWidth >= 1525) {
-            setDisplayMobile({animationName: 'disappear', animationIterationCount: 1, animationDuration: '99999999999999999999999999s'})
-            setDisplayMain({animationName: 'stay', animationIterationCount: 'infinite', animationDuration: '2s'})
-        }
-    })
+    }, [])
 
     const menuItems = [
         {
@@ -80,7 +82,6 @@ const NavBar = () => {
                     />
                 </Link>
                 <div className='link-container'>
-                    {console.log(window.innerWidth)}
                     <Link className={`nav-link ${state.selectedPage === '/about' ? ' selected' : ''}`} onClick={() => {handleSelection(1)}} to={'/about'}> <InfoCircleOutlined /> {window.innerWidth > 750 ? 'About' : ''} </Link>
                     <Link className={`nav-link ${state.selectedPage === '/abilities' ? ' selected' : ''}`} onClick={() => {handleSelection(2)}} to={'/abilities'}> <CodeOutlined /> {window.innerWidth > 750 ? 'What I can do' : ''} </Link>
                     <Link className={`nav-link ${state.selectedPage === '/resume' ? ' selected' : ''}`} onClick={() => {handleSelection(3)}} to={'/resume'}> <FileProtectOutlined /> {window.innerWidth > 750 ? 'My Resume' : ''} </Link>
