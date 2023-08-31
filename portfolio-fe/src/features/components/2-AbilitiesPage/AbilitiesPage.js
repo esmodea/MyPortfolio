@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import NavBar from '../common/NavBar';
 import Form from './Form';
 import './abilities.css';
 

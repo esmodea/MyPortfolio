@@ -18,7 +18,6 @@ const Login = () => {
     return(
         <>  
             <div className='page-container'>
-                <NavBar />
                 <div className='login-content'>
                     <p className='info'>You are looking at the nasa Astronomy Picture of the Day</p>
                     <div className='login-window'>

@@ -66,7 +66,7 @@
     color: #011526;
 }
 }
-
+@media screen and (max-width: 1285px){
 .nav-link{
     background-color: #046099;
     font-size: xx-large;
@@ -108,4 +108,5 @@
 .main-logo{
     padding: 0px 15px;
     /* filter: drop-shadow(2px 2px 4px #FB74A6); */
+}
 }
