@@ -5,10 +5,11 @@ import { selectPage } from '../../state/common/navBarSlice';
 import { useAuth0 } from '@auth0/auth0-react';
 import Explanation from '../2-AbilitiesPage/Explanation';
 import { Menu } from 'antd';
-import { FormOutlined, InfoCircleOutlined } from '@ant-design/icons';
+import { FormOutlined, GithubFilled, InfoCircleOutlined, FileProtectOutlined, ToolOutlined, CodeOutlined } from '@ant-design/icons';
 import { choosePage } from '../../state/dashboardState/dashboardSlice';
 import logo from '../../assets/logo.svg';
 import altlogo from '../../assets/Logo.png';
+import logoCropped from '../../assets/Logo-cropped.png'
 import './common.css';
 
 const NavBar = () => {
@@ -46,20 +47,22 @@ const NavBar = () => {
         <>
             <div className='nav'>
                 <Link onClick={() => {handleSelection(1)}} to={'/'} className={`logo-container`}>
-                    <object
+                    {<object
                       className='main-logo'
-                      data={logo ? logo : altlogo}
+                      data={window.screen.width > 1525 ? logo : logoCropped}
                       alt='Esmodea Burk'
-                      width={'350px'}
-                      height={'219px'}
-                    />
+                      width={`${window.screen.width > 1285 ? '350px' : '95px'}`}
+                      height={`${window.screen.width > 1285 ? '298px' : '64px'}`}
+                      style={window.screen.width > 1525 ? {} : {backgroundColor: '#046099'}}
+                    />}
                 </Link>
                 <div className='link-container'>
-                    <Link className={`nav-link ${state.selectedPage === '/about' ? ' selected' : ''}`} onClick={() => {handleSelection(1)}} to={'/about'}> About </Link>
-                    {/* <Link className={`nav-link ${state.selectedPage === '/abilities' ? ' selected' : ''}`} onClick={() => {handleSelection(2)}} to={'/abilities'}> What I can do </Link> */}
-                    <Link className={`nav-link ${state.selectedPage === '/resume' ? ' selected' : ''}`} onClick={() => {handleSelection(3)}} to={'/resume'}> My Resume </Link>
-                    <Link className={`nav-link ${state.selectedPage === '/github' ? ' selected' : ''}`} onClick={() => {handleSelection(4)}} to={'/github'}> My Github </Link>
-                    <Link className={`nav-link ${state.selectedPage === '/tools' ? ' selected' : ''}`} onClick={() => {handleSelection(5)}} to={'/tools'}> The tools I use </Link>
+                    {console.log(window.screen.width)}
+                    <Link className={`nav-link ${state.selectedPage === '/about' ? ' selected' : ''}`} onClick={() => {handleSelection(1)}} to={'/about'}> <InfoCircleOutlined /> {window.screen.width > 1285 ? 'About' : ''} </Link>
+                    <Link className={`nav-link ${state.selectedPage === '/abilities' ? ' selected' : ''}`} onClick={() => {handleSelection(2)}} to={'/abilities'}> <CodeOutlined /> {window.screen.width > 1285 ? 'What I can do' : ''} </Link>
+                    <Link className={`nav-link ${state.selectedPage === '/resume' ? ' selected' : ''}`} onClick={() => {handleSelection(3)}} to={'/resume'}> <FileProtectOutlined /> {window.screen.width > 1285 ? 'My Resume' : ''} </Link>
+                    <Link className={`nav-link ${state.selectedPage === '/github' ? ' selected' : ''}`} onClick={() => {handleSelection(4)}} to={'/github'}> <GithubFilled /> {window.screen.width > 1285 ? 'My Github' : ''} </Link>
+                    <Link className={`nav-link ${state.selectedPage === '/tools' ? ' selected' : ''}`} onClick={() => {handleSelection(5)}} to={'/tools'}> <ToolOutlined /> {window.screen.width > 1285 ? 'The tools I use' : ''} </Link>
                 </div>
             </div>
             {state.selectedPage === '/abilities' && isAuthenticated ? <Explanation menu={toggleMenu} /> : ''}
