@@ -37,6 +37,7 @@
     justify-content: space-evenly;
     align-items: center;
     background-color: #046099;
+    z-index: inherit;
     height: fit-content;
     padding: .5rem 3rem .5rem 3rem;
     border-radius: 1.3rem 0rem 0rem 1.3rem;
