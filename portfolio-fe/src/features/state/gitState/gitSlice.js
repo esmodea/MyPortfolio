@@ -9,7 +9,7 @@ const initialState = {
 };
 
 export const fetchGit = createAsyncThunk(
-    'resumeState/fetchResume', async (_, thunkAPI) => {
+    'ResumeState/fetchResume', async (_, thunkAPI) => {
         try{
             const response = await axios.get('http://localhost:8000/github')
                 .then((res) => {

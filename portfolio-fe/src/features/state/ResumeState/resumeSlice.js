@@ -9,7 +9,7 @@ const initialState = {
 };
 
 export const fetchResume = createAsyncThunk(
-    'resumeState/fetchResume', async (_, thunkAPI) => {
+    'ResumeState/fetchResume', async (_, thunkAPI) => {
         try{
             const response = await axios.get('http://localhost:8000/resume')
                 .then((res) => {

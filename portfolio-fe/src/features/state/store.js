@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 import navState from './common/navBarSlice';
-import resumeSlice from './resumeState/resumeSlice';
+import resumeSlice from './ResumeState/resumeSlice';
 import gitSlice from './gitState/gitSlice';
 import toolsSlice from './toolsState/toolsSlice';
 import cacheSlice from './common/cacheSlice';

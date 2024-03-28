@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchResume } from '../../state/resumeState/resumeSlice';
+import { fetchResume } from '../../state/ResumeState/resumeSlice';
 import NavBar from '../common/NavBar';
 import Footer from '../common/Footer';
 import Overall from './Overall';
