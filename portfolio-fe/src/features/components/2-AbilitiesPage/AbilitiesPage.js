@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import NavBar from '../common/NavBar';
 import Form from './Form';
 import './abilities.css';
 
@@ -10,7 +9,6 @@ const AbilitiesPage = () => {
     return(
         <>
             <div className='page-container abilities'>
-                <NavBar />
                 <Form Child={page} />
             </div>
         </>

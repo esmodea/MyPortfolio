@@ -4,6 +4,7 @@ import { Route, Routes, Navigate, useLocation } from 'react-router-dom';
 import { useAuth0 } from '@auth0/auth0-react';
 
 import { selectPage } from './features/state/common/navBarSlice';
+import NavBar from './features/components/common/NavBar';
 import AboutPage from './features/components/1-AboutPage/AboutPage';
 import AbilitiesPage from './features/components/2-AbilitiesPage/AbilitiesPage';
 import ResumePage from './features/components/3-ResumePage/ResumePage';
@@ -17,8 +18,11 @@ function App() {
   const dispatch = useDispatch();
   const location = useLocation();
   useEffect(() => {dispatch(selectPage(location.pathname));});
+  console.log("This is where I log the window object", window.navigator.userAgent)
 
   return (
+    <>
+    <NavBar />
     <Routes>
       <Route exact path='/' element={<Navigate to='/about' />}/>
       <Route path='/about' element={<AboutPage />}/>
@@ -27,6 +31,7 @@ function App() {
       <Route path='/github' element={<GitPage />}/>
       <Route path='/tools' element={<ToolsPage />}/>
     </Routes>
+    </>
   );
 }
 
